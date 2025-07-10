@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacktum – Contact Us & FAQ</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka+One&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for Snacktum Theme */
+        :root {
+            --primary-purple: #9C27B0; /* Neon Purple */
+            --accent-lime: #CDDC39;   /* Electric Lime */
+            --charcoal-black: #2C3E50; /* Charcoal Black */
+            --digital-cyan: #00BCD4;   /* Digital Cyan */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--charcoal-black);
+            color: #ECF0F1; /* Light grey for text */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bungee', cursive;
+            color: var(--accent-lime);
+        }
+
+        .fredoka {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-lime);
+            color: var(--charcoal-black);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #AECB2B; /* Slightly darker lime */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-purple);
+            color: #ECF0F1;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #7B1FA2; /* Slightly darker purple */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .bg-gradient-snacktum {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--digital-cyan) 100%);
+        }
+
+        .text-neon-purple { color: var(--primary-purple); }
+        .text-electric-lime { color: var(--accent-lime); }
+        .text-digital-cyan { color: var(--digital-cyan); }
+
+        .border-neon-purple { border-color: var(--primary-purple); }
+        .border-electric-lime { border-color: var(--accent-lime); }
+
+        /* Custom scrollbar for a more edgy feel */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--charcoal-black);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-purple);
+            border-radius: 10px;
+            border: 3px solid var(--charcoal-black);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--digital-cyan);
+        }
+
+        /* FAQ specific styles for accordion */
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 1.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem; /* Equivalent to text-2xl */
+            font-family: 'Fredoka One', cursive;
+            color: var(--electric-lime);
+        }
+        .faq-question:hover {
+            color: var(--digital-cyan);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 1rem;
+            font-size: 1.125rem; /* Equivalent to text-lg */
+            color: #ECF0F1;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Adjust based on expected content height */
+            padding-bottom: 1.5rem;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease-out;
+        }
+        .faq-icon.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-charcoal-black text-white py-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="text-3xl font-extrabold text-electric-lime fredoka">Snacktum</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-electric-lime transition-colors duration-300">Home</a></li>
+                    <li><a href="blog.html" class="hover:text-electric-lime transition-colors duration-300">Blog</a></li>
+                    <li><a href="privacy.html" class="hover:text-electric-lime transition-colors duration-300">Privacy</a></li>
+                    <li><a href="terms.html" class="hover:text-electric-lime transition-colors duration-300">Terms</a></li>
+                    <li><a href="cookies.html" class="hover:text-electric-lime transition-colors duration-300">Cookies</a></li>
+                    <li><a href="contact.html" class="hover:text-electric-lime transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact Us Hero Section -->
+        <section class="bg-gradient-snacktum h-[400px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden mb-16">
+            <div class="p-8 rounded-lg bg-black bg-opacity-50">
+                <h1 class="text-6xl font-black text-white mb-4 leading-tight">Get in Touch</h1>
+                <p class="text-2xl text-electric-lime fredoka">We're here to answer your snack queries!</p>
+            </div>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section id="contact-info" class="container mx-auto px-4 py-16">
+            <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-primary-purple text-center">
+                <h2 class="text-4xl text-electric-lime mb-6 fredoka">Contact Snacktum</h2>
+                <p class="text-lg text-white mb-4">
+                    Have a burning snack question? Want to share your latest munchie masterpiece? Or perhaps you've stumbled upon a snack myth that needs debunking? Whatever your query, the Snacktum team is ready to assist! We value your feedback and are always eager to connect with our fellow snack worshippers.
+                </p>
+                <div class="space-y-4 mb-6">
+                    <p class="text-xl text-digital-cyan fredoka">Email Us:</p>
+                    <p class="text-lg text-white">For general inquiries, partnerships, or support:</p>
+                    <a href="mailto:info@snacktum.com" class="text-electric-lime hover:underline text-xl font-bold">info@snacktum.com</a>
+                </div>
+                <div class="space-y-4 mb-8">
+                    <p class="text-xl text-digital-cyan fredoka">Visit Our Headquarters:</p>
+                    <p class="text-lg text-white">While we're mostly digital, our snack operations are based at:</p>
+                    <address class="text-lg text-white not-italic">
+                        123 Munchie Lane, Snack City, <br>
+                        Flavorland, FL 90210, USA
+                    </address>
+                </div>
+
+                <h3 class="text-3xl text-electric-lime mb-6 fredoka">Send Us a Message</h3>
+                <form action="#" method="POST" class="max-w-xl mx-auto text-left">
+                    <div class="mb-4">
+                        <label for="name" class="block text-lg text-digital-cyan mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-electric-lime focus:ring focus:ring-electric-lime focus:ring-opacity-50" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-lg text-digital-cyan mb-2">Your Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-electric-lime focus:ring focus:ring-electric-lime focus:ring-opacity-50" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-lg text-digital-cyan mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-electric-lime focus:ring focus:ring-electric-lime focus:ring-opacity-50" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-lg text-digital-cyan mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-electric-lime focus:ring focus:ring-electric-lime focus:ring-opacity-50" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </div>
+                </form>
+
+                <p class="text-lg text-white mt-8">
+                    We aim to respond to all inquiries within 24-48 business hours. Thank you for being a part of the Snacktum community!
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq-section" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-neon-purple">Frequently Asked Questions</h2>
+            <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-digital-cyan">
+
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What is Snacktum all about?</span>
+                        <span class="faq-icon">&#9660;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Snacktum is your ultimate online destination for all things snacks! We celebrate snacks as a lifestyle, offering creative recipes, viral snack hacks, fun video series, and a vibrant community for "munch worshippers." Our goal is to inspire you to snack loud, snack proud, and explore the endless possibilities of bite-sized deliciousness.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Are the recipes on Snacktum suitable for all dietary needs?</span>
+                        <span class="faq-icon">&#9660;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While we strive to offer a diverse range of recipes, Snacktum is not a specialized dietary site. Our recipes are created for general enjoyment. We provide ingredient lists, but it is the user's responsibility to check for allergens and adapt recipes to their specific dietary needs (e.g., gluten-free, vegan, nut-free). We always recommend consulting with a healthcare professional or registered dietitian for personalized dietary advice, especially if you have allergies or medical conditions.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How often do you update new recipes and content?</span>
+                        <span class="faq-icon">&#9660;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We're constantly cooking up new ideas! Snacktum aims to update its recipe section, blog ("Snack Sermons"), and "SnackHub Video Series" regularly. You can expect fresh content weekly, sometimes even more frequently, especially when new viral snack trends emerge or we discover an epic new munchie hack. Follow our social media channels or subscribe to our newsletter to stay in the loop!</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I submit my own snack recipes or hacks to Snacktum?</span>
+                        <span class="faq-icon">&#9660;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We love hearing from our community of snack enthusiasts! While we don't currently have a direct user submission portal for recipes due to quality control and legal considerations, we encourage you to share your ideas and creations on our social media platforms. Tag us in your posts, and you might just get featured! We're always on the lookout for innovative and exciting snack concepts to inspire our content.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What is "Snack-Saver Mode" and how does it work?</span>
+                        <span class="faq-icon">&#9660;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>"Snack-Saver Mode" is an upcoming interactive feature designed to help you organize your favorite Snacktum recipes. Once activated (requires a user account), you'll be able to bookmark recipes and have them automatically categorized by criteria like crunch level, mood, or key ingredients. It's your personalized snack library, ensuring you never lose track of that perfect munchie idea again! Stay tuned for its full launch.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is Snacktum Swag available internationally?</span>
+                        <span class="faq-icon">&#9660;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, Snacktum Swag (our merchandise like slogan shirts and snack gear) is primarily available for shipping within [Country/Region, e.g., the United States and Canada]. We are actively working on expanding our shipping capabilities to reach our international "munch worshippers" worldwide. Please check our optional store section for the most up-to-date shipping information and availability. We appreciate your patience as we work to bring Snacktum Swag to every corner of the globe!</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How can I report a technical issue or provide feedback on the website?</span>
+                        <span class="faq-icon">&#9660;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your experience on Snacktum is important to us! If you encounter any technical issues, broken links, or simply have suggestions for improving the website, please don't hesitate to reach out. You can use the email address provided in our "Contact Us" section (info@snacktum.com) to send us a detailed message. We appreciate your vigilance in helping us maintain a smooth and enjoyable platform for all snack enthusiasts.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Customer Satisfaction -->
+        <section id="customer-satisfaction" class="container mx-auto px-4 py-16 bg-gradient-snacktum rounded-3xl mb-16 text-center">
+            <h2 class="text-5xl mb-8 text-white">Your Snack Happiness, Our Priority</h2>
+            <p class="text-xl text-white mb-6">At Snacktum, we are utterly devoted to your snacking satisfaction. We believe that every munch, every bite, and every craving should be met with unbridled joy and deliciousness. Our commitment extends beyond just providing recipes; it's about fostering a community where snack lovers feel understood, inspired, and always delighted. We meticulously curate our content, test our recipes, and strive to bring you the most creative and mouth-watering snack ideas that actually work. Your feedback is our fuel, helping us to continuously improve and innovate. If you ever have a suggestion, a question, or simply want to share your latest snack triumph, please don't hesitate to reach out. We're here to ensure your journey through the world of snacks is nothing short of epic. Because when you snack loud and snack proud, we know we've done our job right!</p>
+            <a href="contact.html" class="btn-primary">Contact Us</a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal-black text-white py-8 mt-16 rounded-t-3xl">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <h3 class="text-2xl text-electric-lime fredoka">Snacktum Headquarters</h3>
+                <p class="text-md text-gray-300">
+                    123 Munchie Lane, Snack City, <br>
+                    Flavorland, FL 90210, USA
+                </p>
+            </div>
+            <nav class="mb-4">
+                <ul class="flex justify-center space-x-6 text-sm">
+                    <li><a href="index.html" class="hover:text-electric-lime transition-colors duration-300">Home</a></li>
+                    <li><a href="blog.html" class="hover:text-electric-lime transition-colors duration-300">Blog</a></li>
+                    <li><a href="privacy.html" class="hover:text-electric-lime transition-colors duration-300">Privacy</a></li>
+                    <li><a href="terms.html" class="hover:text-electric-lime transition-colors duration-300">Terms</a></li>
+                    <li><a href="cookies.html" class="hover:text-electric-lime transition-colors duration-300">Cookies</a></li>
+                    <li><a href="contact.html" class="hover:text-electric-lime transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="text-sm text-gray-400">&copy; 2025 Snacktum. All rights reserved. Snack loud. Snack proud.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for FAQ accordion functionality
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+
+            if (answer.classList.contains('open')) {
+                answer.classList.remove('open');
+                icon.classList.remove('rotate');
+            } else {
+                // Close all other open FAQs
+                document.querySelectorAll('.faq-answer.open').forEach(item => {
+                    item.classList.remove('open');
+                    item.previousElementSibling.querySelector('.faq-icon').classList.remove('rotate');
+                });
+                // Open the clicked FAQ
+                answer.classList.add('open');
+                icon.classList.add('rotate');
+            }
+        }
+    </script>
+
+</body>
+</html>

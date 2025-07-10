@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacktum – The Holy Place for Munch Worshippers</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka+One&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for Snacktum Theme */
+        :root {
+            --primary-purple: #9C27B0; /* Neon Purple */
+            --accent-lime: #CDDC39;   /* Electric Lime */
+            --charcoal-black: #2C3E50; /* Charcoal Black */
+            --digital-cyan: #00BCD4;   /* Digital Cyan */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--charcoal-black);
+            color: #ECF0F1; /* Light grey for text */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bungee', cursive;
+            color: var(--accent-lime);
+        }
+
+        .fredoka {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-lime);
+            color: var(--charcoal-black);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #AECB2B; /* Slightly darker lime */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-purple);
+            color: #ECF0F1;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #7B1FA2; /* Slightly darker purple */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .bg-gradient-snacktum {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--digital-cyan) 100%);
+        }
+
+        .text-neon-purple { color: var(--primary-purple); }
+        .text-electric-lime { color: var(--accent-lime); }
+        .text-digital-cyan { color: var(--digital-cyan); }
+
+        .border-neon-purple { border-color: var(--primary-purple); }
+        .border-electric-lime { border-color: var(--accent-lime); }
+
+        /* Custom scrollbar for a more edgy feel */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--charcoal-black);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-purple);
+            border-radius: 10px;
+            border: 3px solid var(--charcoal-black);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--digital-cyan);
+        }
+
+        /* Hero banner specific styling */
+        .hero-banner {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: 0;
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-charcoal-black text-white py-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="text-3xl font-extrabold text-electric-lime fredoka">Snacktum</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-electric-lime transition-colors duration-300">Home</a></li>
+                    <li><a href="blog.html" class="hover:text-electric-lime transition-colors duration-300">Blog</a></li>
+                    <li><a href="privacy.html" class="hover:text-electric-lime transition-colors duration-300">Privacy</a></li>
+                    <li><a href="terms.html" class="hover:text-electric-lime transition-colors duration-300">Terms</a></li>
+                    <li><a href="cookies.html" class="hover:text-electric-lime transition-colors duration-300">Cookies</a></li>
+                    <li><a href="contact.html" class="hover:text-electric-lime transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-banner h-[600px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden mb-16">
+            <div class="relative z-10 p-8 rounded-lg bg-black bg-opacity-50">
+                <h1 class="text-6xl font-black text-electric-lime mb-4 leading-tight">Snack loud. Snack proud.</h1>
+                <p class="text-2xl text-white mb-8 fredoka">Where Snacks Rule, and Rules Drool.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#recipes" class="btn-primary">🍕 Snack Recipes</a>
+                    <a href="#snack-hacks" class="btn-secondary">🔥 Viral Snack Hacks</a>
+                    <a href="#gamer-bites" class="btn-primary">🎮 Gamer Bites</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Snack Categories -->
+        <section id="categories" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-neon-purple">Snack Categories</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Epic Crunches -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-electric-lime transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-electric-lime mb-4 fredoka">Epic Crunches</h3>
+                    <p class="text-lg text-white mb-4">Dive into the world of satisfying sounds and textures. From homemade chips that redefine crispness to baked crisps that surprise your palate, this category is all about that glorious, audible crunch. We'll explore flavor-powder hacks that elevate simple snacks into gourmet experiences, ensuring every bite is a symphony for your ears and taste buds. Get ready for sound-on recipes that demand to be heard!</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Homemade chips & baked crisps</li>
+                        <li>Innovative flavor-powder hacks</li>
+                        <li>Recipes designed for maximum audible crunch</li>
+                    </ul>
+                </div>
+                <!-- Lazy Genius Bites -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-digital-cyan transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-digital-cyan mb-4 fredoka">Lazy Genius Bites</h3>
+                    <p class="text-lg text-white mb-4">Who says genius can't be lazy? This category is dedicated to the art of effortless snacking. Discover mind-blowingly simple 3-ingredient snacks that come together in a flash, and 5-minute microwave munchies perfect for those sudden, undeniable cravings. These bites are your ultimate companions for dorm life, late-night study sessions, or when you just can't be bothered but still demand deliciousness. Efficiency meets epic flavor here!</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Ultra-simple 3-ingredient snacks</li>
+                        <li>Rapid 5-minute microwave munchies</li>
+                        <li>Perfect for dorms, quick fixes, and late-night eats</li>
+                    </ul>
+                </div>
+                <!-- Snackified Meals -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-primary-purple transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-neon-purple mb-4 fredoka">Snackified Meals</h3>
+                    <p class="text-lg text-white mb-4">Why eat a whole meal when you can snack on it? We're taking your favorite dishes and shrinking them down into bite-sized, shareable glory. Imagine mini tacos bursting with flavor, elegant sushi sliders perfect for a party, or elaborate snackboards that turn dinner into an interactive feast. This is where culinary creativity meets snack culture, transforming full meals into portable, pop-able masterpieces that are as fun to make as they are to devour.</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Miniature versions of classic meals</li>
+                        <li>Creative sushi sliders & snackboards</li>
+                        <li>Full meals transformed into bite-sized perfection</li>
+                    </ul>
+                </div>
+                <!-- Sweet + Salty Cravings -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-electric-lime transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-electric-lime mb-4 fredoka">Sweet + Salty Cravings</h3>
+                    <p class="text-lg text-white mb-4">The eternal dilemma: sweet or salty? Why choose when you can have both! This category celebrates the harmonious marriage of contrasting flavors. Indulge in decadent candy bark with a surprising pretzel crunch, perfectly balanced caramel popcorn, or revolutionary chocolate nachos that combine the best of both worlds. Prepare for mix-n-match dessert snacks that satisfy every corner of your craving spectrum, proving that opposites truly attract in the snack universe.</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Perfect blends of sweet and savory</li>
+                        <li>Candy bark, caramel popcorn, chocolate nachos</li>
+                        <li>Mix-n-match dessert snacks for every craving</li>
+                    </ul>
+                </div>
+                <!-- Energy Snacks -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-digital-cyan transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-digital-cyan mb-4 fredoka">Energy Snacks</h3>
+                    <p class="text-lg text-white mb-4">Fuel your hustle with snacks that pack a punch without compromising on taste. This section is dedicated to smart snacking that keeps you energized and focused. Discover easy-to-make protein balls that are perfect for a post-workout boost, no-bake bars that provide sustained energy, and clever snacking strategies that are healthy but still undeniably hype. Get ready to power up your day the Snacktum way, proving that nutritious can also be delicious and exciting.</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Protein balls & no-bake bars</li>
+                        <li>Smart snacking for sustained energy</li>
+                        <li>Healthy, yet undeniably hype options</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recipes Section -->
+        <section id="recipes" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-electric-lime">Our Holy Snack Recipes</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-12">
+
+                <!-- Recipe 1: Exploding Popcorn Clusters with Chili-Lime Dust -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-primary-purple flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p1.webp" alt="Exploding Popcorn Clusters with Chili-Lime Dust" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">Exploding Popcorn Clusters with Chili-Lime Dust</h3>
+                        <p class="text-lg text-white mb-6">
+                            This isn't just popcorn; it's an experience! Irresistible clusters coated in a vibrant, zesty, and subtly spicy chili-lime dust. Imagine the satisfying crunch, bound by a delicate, sweet glaze, bursting with tangy lime and a gentle chili kick. Perfect for movie nights or impressing guests.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe 2: Spicy Cheeto-Crusted Chicken Bites -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-digital-cyan flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p2.webp" alt="Spicy Cheeto-Crusted Chicken Bites" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">Spicy Cheeto-Crusted Chicken Bites</h3>
+                        <p class="text-lg text-white mb-6">
+                            The ultimate fusion of comfort food and viral snack culture! Tender, juicy chicken coated in a gloriously crunchy, intensely cheesy, and fiery layer of crushed Flamin' Hot Cheetos. A statement snack that screams "party!" Perfect for game day or any bold craving.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe 3: Loaded Pizza Rolls (Homemade & Epic) -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-electric-lime flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p3.avif" alt="Loaded Pizza Rolls (Homemade & Epic)" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">Loaded Pizza Rolls (Homemade & Epic)</h3>
+                        <p class="text-lg text-white mb-6">
+                            Ditch the frozen rolls! These homemade Loaded Pizza Rolls are miniature flavor bombs: gooey cheese, savory pepperoni, and your favorite toppings, all in a golden, crispy crust. The quintessential party snack or game-day hero.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe 4: Sweet & Spicy Candied Bacon Bites -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-digital-cyan flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p4.webp" alt="Sweet & Spicy Candied Bacon Bites" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">Sweet & Spicy Candied Bacon Bites</h3>
+                        <p class="text-lg text-white mb-6">
+                            A realm of pure snack euphoria! Crispy, savory bacon coated in a glistening, sticky-sweet glaze with a tantalizing kick of heat. The ultimate sweet-and-salty indulgence, perfect as a sophisticated, addictive snack.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe 5: Loaded Nacho Fries (The Ultimate Snack Mashup) -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-primary-purple flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p5.avif" alt="Loaded Nacho Fries (The Ultimate Snack Mashup)" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">Loaded Nacho Fries (The Ultimate Snack Mashup)</h3>
+                        <p class="text-lg text-white mb-6">
+                            Why choose between fries and nachos? Get both! Crispy fries smothered in creamy cheese sauce, seasoned ground beef, pico de gallo, sour cream, and jalapeños. A flavor fiesta and textural wonderland.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe 6: Giant Cookie Skillet with Ice Cream Meltdown -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-electric-lime flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p6.webp" alt="Giant Cookie Skillet with Ice Cream Meltdown" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">Giant Cookie Skillet with Ice Cream Meltdown</h3>
+                        <p class="text-lg text-white mb-6">
+                            A warm, gooey, chocolate-chip-studded dream designed for communal indulgence! A perfectly baked cookie in a hot skillet, topped with melting vanilla ice cream. An event, a sensory delight, and the ultimate crowd-pleaser.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe 7: Spicy Garlic Parmesan Pretzel Bites -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-digital-cyan flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p7.webp" alt="Spicy Garlic Parmesan Pretzel Bites" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">Spicy Garlic Parmesan Pretzel Bites</h3>
+                        <p class="text-lg text-white mb-6">
+                            Elevate your snack game! Soft, chewy pretzel nuggets, baked to golden brown, then tossed in melted butter, pungent garlic, salty Parmesan, and fiery red pepper flakes. A symphony of savory, cheesy, garlicky, and spicy flavors.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe 8: Mini Taco Cups (Snack-Sized Fiesta) -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-primary-purple flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p8.avif" alt="Mini Taco Cups (Snack-Sized Fiesta)" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">Mini Taco Cups (Snack-Sized Fiesta)</h3>
+                        <p class="text-lg text-white mb-6">
+                            Fiesta with these adorable, delicious Mini Taco Cups! All the vibrant flavors of a taco, shrunk into perfect, bite-sized portions. Crispy tortilla cups, seasoned meat, melty cheese, and fresh toppings. Ideal for parties or a fun family snack.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe 9: Crispy Parmesan Garlic Smashed Potatoes -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-electric-lime flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p9.webp" alt="Crispy Parmesan Garlic Smashed Potatoes" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">Crispy Parmesan Garlic Smashed Potatoes</h3>
+                        <p class="text-lg text-white mb-6">
+                            Your new favorite potato snack! Unbelievably crispy exterior, fluffy interior. Boiled, smashed, then roasted to golden perfection with garlic, herbs, and salty Parmesan. Incredibly addictive side or standalone snack.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+                <!-- Recipe 10: No-Bake Peanut Butter Energy Bites -->
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-digital-cyan flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <img src="p10.webp" alt="No-Bake Peanut Butter Energy Bites" class="w-full md:w-1/3 h-auto rounded-xl object-cover shadow-lg">
+                    <div class="flex-grow">
+                        <h3 class="text-4xl text-electric-lime mb-4 fredoka">No-Bake Peanut Butter Energy Bites</h3>
+                        <p class="text-lg text-white mb-6">
+                            Quick, delicious, and guilt-free! Packed with wholesome ingredients and nutty flavor. Perfect for a pre-workout, afternoon pick-me-up, or healthy dessert. Requires no baking and endlessly customizable.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Nutritional information is an estimate and may vary based on ingredients and preparation methods.</p>
+                    </div>
+                </div>
+
+              
+
+            </div>
+        </section>
+
+        <!-- SnackHub Video Series -->
+        <section id="snack-hub" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-neon-purple">SnackHub Video Series</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-electric-lime text-center transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-electric-lime mb-3 fredoka">Snack Under 60</h3>
+                    <p class="text-lg text-white mb-4">Rapid-fire recipes you can whip up in under 60 seconds. Perfect for instant gratification!</p>
+                    <a href="#" class="btn-secondary text-sm">Watch Now</a>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-digital-cyan text-center transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-digital-cyan mb-3 fredoka">Snack Fails vs Fixes</h3>
+                    <p class="text-lg text-white mb-4">We've all been there. Learn from our mistakes and turn snack disasters into delicious triumphs.</p>
+                    <a href="#" class="btn-secondary text-sm">Learn More</a>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-primary-purple text-center transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-neon-purple mb-3 fredoka">Snack Duel</h3>
+                    <p class="text-lg text-white mb-4">Two epic snack builds go head-to-head. You vote for the champion! May the best munch win.</p>
+                    <a href="#" class="btn-secondary text-sm">Cast Your Vote</a>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-electric-lime text-center transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-electric-lime mb-3 fredoka">Snack Mythbusters</h3>
+                    <p class="text-lg text-white mb-4">Does hot sauce on popcorn hit harder? We test viral snack theories so you don't have to.</p>
+                    <a href="#" class="btn-secondary text-sm">Debunk Myths</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Features -->
+        <section id="interactive-features" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-electric-lime">Interactive Snack Fun</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-digital-cyan text-center transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-digital-cyan mb-4 fredoka">Flavor Builder</h3>
+                    <p class="text-lg text-white mb-4">Choose your base (chip, bread, popcorn), add flavors, and get personalized snack suggestions. Unleash your inner snack architect!</p>
+                    <a href="#" class="btn-primary">Build My Flavor</a>
+                </div>
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-primary-purple text-center transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-neon-purple mb-4 fredoka">Snack Personality Quiz</h3>
+                    <p class="text-lg text-white mb-4">Are you a Dip Dunker or a Crumb Licker? Discover your true snack identity with our fun quiz!</p>
+                    <a href="#" class="btn-primary">Take the Quiz</a>
+                </div>
+                <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-electric-lime text-center transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl text-electric-lime mb-4 fredoka">Snack-Saver Mode</h3>
+                    <p class="text-lg text-white mb-4">Bookmark your favorite recipes and auto-organize them by crunch, mood, or ingredients. Never lose a snack idea again!</p>
+                    <a href="#" class="btn-primary">Activate Saver Mode</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optional Store (Snacktum Swag) -->
+        <section id="snacktum-swag" class="container mx-auto px-4 py-16 bg-gradient-snacktum rounded-3xl mb-16">
+            <h2 class="text-5xl text-center mb-12 text-white">Snacktum Swag</h2>
+            <p class="text-center text-xl text-white mb-8 fredoka">Rep the snack life. Wear your munch pride.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-electric-lime text-center">
+                    <h3 class="text-2xl text-electric-lime mb-2 fredoka">Slogan Shirts</h3>
+                    <p class="text-lg text-white mb-4">"Snack Over Smack", "Silence Is Not Crunchy" and more!</p>
+                    <a href="#" class="btn-primary">Shop Shirts</a>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-digital-cyan text-center">
+                    <h3 class="text-2xl text-digital-cyan mb-2 fredoka">Snack Gear</h3>
+                    <p class="text-lg text-white mb-4">Portable snack trays, mini fry baskets, spice dusters for the ultimate snack setup.</p>
+                    <a href="#" class="btn-primary">Get Gear</a>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-primary-purple text-center">
+                    <h3 class="text-2xl text-neon-purple mb-2 fredoka">Digital Snack Zines</h3>
+                    <p class="text-lg text-white mb-4">Exclusive eCookbooks and zines filled with secret snack hacks and gourmet recipes.</p>
+                    <a href="#" class="btn-primary">Grab Zines</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Snacktum Blog: “Snack Sermons” -->
+        <section id="snack-sermons" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-electric-lime">Snack Sermons – Our Blog</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-digital-cyan transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl text-digital-cyan mb-3 fredoka">Why Snacking Deserves a Religion</h3>
+                    <p class="text-md text-white mb-4">A deep dive into the spiritual side of munching. It's more than food; it's a way of life.</p>
+                    <a href="#" class="btn-secondary text-sm">Read More</a>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-primary-purple transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl text-neon-purple mb-3 fredoka">Top 10 Underrated Chips You’ve Never Tried</h3>
+                    <p class="text-md text-white mb-4">Expand your chip horizons with these hidden gems and flavor bombs.</p>
+                    <a href="#" class="btn-secondary text-sm">Discover Chips</a>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-electric-lime transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl text-electric-lime mb-3 fredoka">How to Throw a Snack Party with ₹300</h3>
+                    <p class="text-md text-white mb-4">Budget-friendly tips for an epic snack feast that won't break the bank.</p>
+                    <a href="#" class="btn-secondary text-sm">Party On!</a>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-digital-cyan transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl text-digital-cyan mb-3 fredoka">Broke But Snacky? These 2-Min Hacks Save the Day</h3>
+                    <p class="text-md text-white mb-4">Quick and easy snack fixes for when your wallet is thin but your cravings are strong.</p>
+                    <a href="#" class="btn-secondary text-sm">Hack My Hunger</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Snacktum Is Different -->
+        <section id="why-different" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-neon-purple">Why Snacktum Is Different</h2>
+            <div class="flex flex-wrap justify-center gap-8 text-center">
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-electric-lime w-full md:w-1/2 lg:w-1/4 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl text-electric-lime mb-3 fredoka">100% Snack-Focused</h3>
+                    <p class="text-lg text-white">No full meals, no fluff. Just pure, unadulterated snack glory.</p>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-digital-cyan w-full md:w-1/2 lg:w-1/4 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl text-digital-cyan mb-3 fredoka">Humor, Culture, Community</h3>
+                    <p class="text-lg text-white">We combine humor, snack culture, community, and creativity in every bite.</p>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-primary-purple w-full md:w-1/2 lg:w-1/4 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl text-neon-purple mb-3 fredoka">Built for Scroll Culture</h3>
+                    <p class="text-lg text-white">Quick reads, engaging GIFs, and relatable memes for the modern snacker.</p>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-electric-lime w-full md:w-1/2 lg:w-1/4 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl text-electric-lime mb-3 fredoka">Hacks, Fails & Fun</h3>
+                    <p class="text-lg text-white">We share real snack hacks, hilarious fails, and pure fun – not just polished plates.</p>
+                </div>
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-digital-cyan w-full md:w-1/2 lg:w-1/4 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl text-digital-cyan mb-3 fredoka">For All Snackers</h3>
+                    <p class="text-lg text-white">Perfect for teens, students, content creators, and midnight snackers alike.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Satisfaction -->
+        <section id="customer-satisfaction" class="container mx-auto px-4 py-16 bg-gradient-snacktum rounded-3xl mb-16 text-center">
+            <h2 class="text-5xl mb-8 text-white">Your Snack Happiness, Our Priority</h2>
+            <p class="text-xl text-white mb-6">At Snacktum, we are utterly devoted to your snacking satisfaction. We believe that every munch, every bite, and every craving should be met with unbridled joy and deliciousness. Our commitment extends beyond just providing recipes; it's about fostering a community where snack lovers feel understood, inspired, and always delighted. We meticulously curate our content, test our recipes, and strive to bring you the most creative and mouth-watering snack ideas that actually work. Your feedback is our fuel, helping us to continuously improve and innovate. If you ever have a suggestion, a question, or simply want to share your latest snack triumph, please don't hesitate to reach out. We're here to ensure your journey through the world of snacks is nothing short of epic. Because when you snack loud and snack proud, we know we've done our job right!</p>
+            <a href="contact.html" class="btn-primary">Contact Us</a>
+        </section>
+
+        <!-- Disclaimer -->
+        <section id="disclaimer" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-electric-lime">Disclaimer</h2>
+            <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-primary-purple text-justify">
+                <p class="text-lg text-white mb-4">
+                    Welcome to Snacktum! While we strive to provide the most delicious and creative snack ideas, it's important to understand the following disclaimers regarding the content presented on this website. The information provided on Snacktum.com (the "Website") is for general informational and entertainment purposes only. All content, including recipes, snack hacks, blog posts, and visual elements, is provided in good faith. However, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Website.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>Health and Dietary Information:</strong> The recipes and snack ideas shared on Snacktum are not intended to be a substitute for professional dietary, nutritional, or medical advice. We are not licensed dietitians, nutritionists, or medical professionals. Always consult with a qualified healthcare provider or registered dietitian before making any changes to your diet, especially if you have allergies, dietary restrictions, or medical conditions. Nutritional information provided (if any) is an estimate and may vary significantly based on specific ingredients, preparation methods, and portion sizes. We cannot guarantee the accuracy of any nutritional calculations.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>Allergens:</strong> Our recipes may contain common allergens such as nuts, dairy, gluten, soy, and eggs. While we strive to provide clear ingredient lists, cross-contamination can occur in any kitchen environment. If you have severe allergies, please exercise extreme caution or avoid recipes that contain ingredients you are allergic to. It is your responsibility to read all ingredient labels and ensure products are safe for your consumption.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>Recipe Outcomes:</strong> The success of any recipe depends on various factors, including the quality of ingredients, precise measurements, cooking equipment, and individual skill. We cannot guarantee that you will achieve the exact same results as depicted or described on our Website. We encourage users to use their best judgment and adapt recipes to their own preferences and equipment.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>External Links:</strong> The Website may contain links to external websites that are not provided or maintained by or in any way affiliated with Snacktum. Please note that Snacktum does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites. We are not responsible for the content or practices of third-party sites.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>User-Generated Content:</strong> If the Website allows for user-generated content (e.g., comments, reviews), Snacktum is not responsible for the accuracy or opinions expressed in such content. We reserve the right to moderate, edit, or remove any content deemed inappropriate or harmful.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>Changes to Content:</strong> Snacktum reserves the right to modify, update, or remove any content on the Website at any time without prior notice. We are not obligated to update information that may be outdated.
+                </p>
+                <p class="text-lg text-white">
+                    By using Snacktum.com, you hereby consent to this disclaimer and agree to its terms. If you require any more information or have any questions about our site's disclaimer, please feel free to contact us.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal-black text-white py-8 mt-16 rounded-t-3xl">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <h3 class="text-2xl text-electric-lime fredoka">Snacktum Headquarters</h3>
+                <p class="text-md text-gray-300">
+                    123 Munchie Lane, Snack City, <br>
+                    Flavorland, FL 90210, USA
+                </p>
+            </div>
+            <nav class="mb-4">
+                <ul class="flex justify-center space-x-6 text-sm">
+                    <li><a href="index.html" class="hover:text-electric-lime transition-colors duration-300">Home</a></li>
+                    <li><a href="blog.html" class="hover:text-electric-lime transition-colors duration-300">Blog</a></li>
+                    <li><a href="privacy.html" class="hover:text-electric-lime transition-colors duration-300">Privacy</a></li>
+                    <li><a href="terms.html" class="hover:text-electric-lime transition-colors duration-300">Terms</a></li>
+                    <li><a href="cookies.html" class="hover:text-electric-lime transition-colors duration-300">Cookies</a></li>
+                    <li><a href="contact.html" class="hover:text-electric-lime transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="text-sm text-gray-400">&copy; 2025 Snacktum. All rights reserved. Snack loud. Snack proud.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

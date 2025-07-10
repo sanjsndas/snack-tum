@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacktum Blog – Snack Sermons</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka+One&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for Snacktum Theme */
+        :root {
+            --primary-purple: #9C27B0; /* Neon Purple */
+            --accent-lime: #CDDC39;   /* Electric Lime */
+            --charcoal-black: #2C3E50; /* Charcoal Black */
+            --digital-cyan: #00BCD4;   /* Digital Cyan */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--charcoal-black);
+            color: #ECF0F1; /* Light grey for text */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bungee', cursive;
+            color: var(--accent-lime);
+        }
+
+        .fredoka {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-lime);
+            color: var(--charcoal-black);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #AECB2B; /* Slightly darker lime */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-purple);
+            color: #ECF0F1;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #7B1FA2; /* Slightly darker purple */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .bg-gradient-snacktum {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--digital-cyan) 100%);
+        }
+
+        .text-neon-purple { color: var(--primary-purple); }
+        .text-electric-lime { color: var(--accent-lime); }
+        .text-digital-cyan { color: var(--digital-cyan); }
+
+        .border-neon-purple { border-color: var(--primary-purple); }
+        .border-electric-lime { border-color: var(--accent-lime); }
+
+        /* Custom scrollbar for a more edgy feel */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--charcoal-black);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-purple);
+            border-radius: 10px;
+            border: 3px solid var(--charcoal-black);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--digital-cyan);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-charcoal-black text-white py-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="text-3xl font-extrabold text-electric-lime fredoka">Snacktum</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-electric-lime transition-colors duration-300">Home</a></li>
+                    <li><a href="blog.html" class="hover:text-electric-lime transition-colors duration-300">Blog</a></li>
+                    <li><a href="privacy.html" class="hover:text-electric-lime transition-colors duration-300">Privacy</a></li>
+                    <li><a href="terms.html" class="hover:text-electric-lime transition-colors duration-300">Terms</a></li>
+                    <li><a href="cookies.html" class="hover:text-electric-lime transition-colors duration-300">Cookies</a></li>
+                    <li><a href="contact.html" class="hover:text-electric-lime transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Blog Hero Section -->
+        <section class="bg-gradient-snacktum h-[400px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden mb-16">
+            <div class="p-8 rounded-lg bg-black bg-opacity-50">
+                <h1 class="text-6xl font-black text-white mb-4 leading-tight">Snack Sermons</h1>
+                <p class="text-2xl text-electric-lime fredoka">Deep Thoughts on Delicious Bites</p>
+            </div>
+        </section>
+
+        <!-- Blog Posts Section -->
+        <section id="blog-posts" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-electric-lime">Latest Snack Sermons</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Blog Post 1 -->
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-digital-cyan transform hover:scale-105 transition-transform duration-300">
+                    <img src="b1.webp" alt="Why Snacking Deserves a Religion" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-2xl text-digital-cyan mb-3 fredoka">Why Snacking Deserves a Religion</h3>
+                    <p class="text-md text-white mb-4">A deep dive into the spiritual side of munching. It's more than food; it's a way of life, a daily ritual that brings joy and comfort. Discover why we believe snacks are truly divine.</p>
+                    <a href="#" class="btn-secondary text-sm">Read More</a>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-primary-purple transform hover:scale-105 transition-transform duration-300">
+                    <img src="b2.webp" alt="Top 10 Underrated Chips You’ve Never Tried" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-2xl text-neon-purple mb-3 fredoka">Top 10 Underrated Chips You’ve Never Tried</h3>
+                    <p class="text-md text-white mb-4">Expand your chip horizons with these hidden gems and flavor bombs. We're talking about the unsung heroes of the snack aisle that deserve a spot in your pantry.</p>
+                    <a href="#" class="btn-secondary text-sm">Discover Chips</a>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-electric-lime transform hover:scale-105 transition-transform duration-300">
+                    <img src="b3.avif" alt="How to Throw a Snack Party with ₹300" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-2xl text-electric-lime mb-3 fredoka">How to Throw a Snack Party with ₹300</h3>
+                    <p class="text-md text-white mb-4">Budget-friendly tips for an epic snack feast that won't break the bank. Prove that you don't need a fortune to host a memorable munchie gathering.</p>
+                    <a href="#" class="btn-secondary text-sm">Party On!</a>
+                </div>
+
+                <!-- Blog Post 4 -->
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-digital-cyan transform hover:scale-105 transition-transform duration-300">
+                    <img src="b4.avif" alt="Broke But Snacky? These 2-Min Hacks Save the Day" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-2xl text-digital-cyan mb-3 fredoka">Broke But Snacky? These 2-Min Hacks Save the Day</h3>
+                    <p class="text-md text-white mb-4">Quick and easy snack fixes for when your wallet is thin but your cravings are strong. Ingenious solutions for instant gratification.</p>
+                    <a href="#" class="btn-secondary text-sm">Hack My Hunger</a>
+                </div>
+
+                <!-- Blog Post 5 -->
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-primary-purple transform hover:scale-105 transition-transform duration-300">
+                    <img src="b5.avif" alt="The Rise of Viral Snack Trends" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-2xl text-neon-purple mb-3 fredoka">The Rise of Viral Snack Trends</h3>
+                    <p class="text-md text-white mb-4">From TikTok sensations to Instagram-worthy bites, explore how snacks are dominating social media and shaping culinary culture.</p>
+                    <a href="#" class="btn-secondary text-sm">Trend Watch</a>
+                </div>
+
+                <!-- Blog Post 6 -->
+                <div class="bg-charcoal-black p-6 rounded-2xl shadow-xl border-2 border-electric-lime transform hover:scale-105 transition-transform duration-300">
+                    <img src="b6.webp" alt="Mastering the Midnight Munchies" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-2xl text-electric-lime mb-3 fredoka">Mastering the Midnight Munchies</h3>
+                    <p class="text-md text-white mb-4">Tips and tricks for satisfying those late-night cravings without derailing your sleep or your diet. Healthy and indulgent options for after dark.</p>
+                    <a href="#" class="btn-secondary text-sm">Night Owl Snacks</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Customer Satisfaction -->
+        <section id="customer-satisfaction" class="container mx-auto px-4 py-16 bg-gradient-snacktum rounded-3xl mb-16 text-center">
+            <h2 class="text-5xl mb-8 text-white">Your Snack Happiness, Our Priority</h2>
+            <p class="text-xl text-white mb-6">At Snacktum, we are utterly devoted to your snacking satisfaction. We believe that every munch, every bite, and every craving should be met with unbridled joy and deliciousness. Our commitment extends beyond just providing recipes; it's about fostering a community where snack lovers feel understood, inspired, and always delighted. We meticulously curate our content, test our recipes, and strive to bring you the most creative and mouth-watering snack ideas that actually work. Your feedback is our fuel, helping us to continuously improve and innovate. If you ever have a suggestion, a question, or simply want to share your latest snack triumph, please don't hesitate to reach out. We're here to ensure your journey through the world of snacks is nothing short of epic. Because when you snack loud and snack proud, we know we've done our job right!</p>
+            <a href="contact.html" class="btn-primary">Contact Us</a>
+        </section>
+
+        <!-- Disclaimer -->
+        <section id="disclaimer" class="container mx-auto px-4 py-16">
+            <h2 class="text-5xl text-center mb-12 text-electric-lime">Disclaimer</h2>
+            <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-primary-purple text-justify">
+                <p class="text-lg text-white mb-4">
+                    Welcome to Snacktum! While we strive to provide the most delicious and creative snack ideas, it's important to understand the following disclaimers regarding the content presented on this website. The information provided on Snacktum.com (the "Website") is for general informational and entertainment purposes only. All content, including recipes, snack hacks, blog posts, and visual elements, is provided in good faith. However, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Website.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>Health and Dietary Information:</strong> The recipes and snack ideas shared on Snacktum are not intended to be a substitute for professional dietary, nutritional, or medical advice. We are not licensed dietitians, nutritionists, or medical professionals. Always consult with a qualified healthcare provider or registered dietitian before making any changes to your diet, especially if you have allergies, dietary restrictions, or medical conditions. Nutritional information provided (if any) is an estimate and may vary significantly based on specific ingredients, preparation methods, and portion sizes. We cannot guarantee the accuracy of any nutritional calculations.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>Allergens:</strong> Our recipes may contain common allergens such as nuts, dairy, gluten, soy, and eggs. While we strive to provide clear ingredient lists, cross-contamination can occur in any kitchen environment. If you have severe allergies, please exercise extreme caution or avoid recipes that contain ingredients you are allergic to. It is your responsibility to read all ingredient labels and ensure products are safe for your consumption.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>Recipe Outcomes:</strong> The success of any recipe depends on various factors, including the quality of ingredients, precise measurements, cooking equipment, and individual skill. We cannot guarantee that you will achieve the exact same results as depicted or described on our Website. We encourage users to use their best judgment and adapt recipes to their own preferences and equipment.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>External Links:</strong> The Website may contain links to external websites that are not provided or maintained by or in any way affiliated with Snacktum. Please note that Snacktum does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites. We are not responsible for the content or practices of third-party sites.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>User-Generated Content:</strong> If the Website allows for user-generated content (e.g., comments, reviews), Snacktum is not responsible for the accuracy or opinions expressed in such content. We reserve the right to moderate, edit, or remove any content deemed inappropriate or harmful.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>Changes to Content:</strong> Snacktum reserves the right to modify, update, or remove any content on the Website at any time without prior notice. We are not obligated to update information that may be outdated.
+                </p>
+                <p class="text-lg text-white">
+                    By using Snacktum.com, you hereby consent to this disclaimer and agree to its terms. If you require any more information or have any questions about our site's disclaimer, please feel free to contact us.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal-black text-white py-8 mt-16 rounded-t-3xl">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <h3 class="text-2xl text-electric-lime fredoka">Snacktum Headquarters</h3>
+                <p class="text-md text-gray-300">
+                    123 Munchie Lane, Snack City, <br>
+                    Flavorland, FL 90210, USA
+                </p>
+            </div>
+            <nav class="mb-4">
+                <ul class="flex justify-center space-x-6 text-sm">
+                    <li><a href="index.html" class="hover:text-electric-lime transition-colors duration-300">Home</a></li>
+                    <li><a href="blog.html" class="hover:text-electric-lime transition-colors duration-300">Blog</a></li>
+                    <li><a href="privacy.html" class="hover:text-electric-lime transition-colors duration-300">Privacy</a></li>
+                    <li><a href="terms.html" class="hover:text-electric-lime transition-colors duration-300">Terms</a></li>
+                    <li><a href="cookies.html" class="hover:text-electric-lime transition-colors duration-300">Cookies</a></li>
+                    <li><a href="contact.html" class="hover:text-electric-lime transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="text-sm text-gray-400">&copy; 2025 Snacktum. All rights reserved. Snack loud. Snack proud.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

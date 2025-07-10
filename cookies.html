@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacktum – Cookie Policy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka+One&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for Snacktum Theme */
+        :root {
+            --primary-purple: #9C27B0; /* Neon Purple */
+            --accent-lime: #CDDC39;   /* Electric Lime */
+            --charcoal-black: #2C3E50; /* Charcoal Black */
+            --digital-cyan: #00BCD4;   /* Digital Cyan */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--charcoal-black);
+            color: #ECF0F1; /* Light grey for text */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bungee', cursive;
+            color: var(--accent-lime);
+        }
+
+        .fredoka {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-lime);
+            color: var(--charcoal-black);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #AECB2B; /* Slightly darker lime */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-purple);
+            color: #ECF0F1;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #7B1FA2; /* Slightly darker purple */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .bg-gradient-snacktum {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--digital-cyan) 100%);
+        }
+
+        .text-neon-purple { color: var(--primary-purple); }
+        .text-electric-lime { color: var(--accent-lime); }
+        .text-digital-cyan { color: var(--digital-cyan); }
+
+        .border-neon-purple { border-color: var(--primary-purple); }
+        .border-electric-lime { border-color: var(--accent-lime); }
+
+        /* Custom scrollbar for a more edgy feel */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--charcoal-black);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-purple);
+            border-radius: 10px;
+            border: 3px solid var(--charcoal-black);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--digital-cyan);
+        }
+
+        /* Cookie Consent Dialogue Box */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(44, 62, 80, 0.95); /* charcoal-black with transparency */
+            color: #ECF0F1;
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            border-top: 2px solid var(--electric-lime);
+        }
+
+        @media (min-width: 768px) {
+            #cookie-consent-banner {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem 2rem;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+
+        #cookie-consent-banner p {
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-size: 1.125rem;
+            line-height: 1.5;
+        }
+
+        @media (min-width: 768px) {
+            #cookie-consent-banner p {
+                text-align: left;
+                margin-bottom: 0;
+                max-width: 70%;
+            }
+        }
+
+        #cookie-consent-banner .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #cookie-consent-banner .button-group .btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #cookie-consent-banner .button-group .btn-accept {
+            background-color: var(--accent-lime);
+            color: var(--charcoal-black);
+        }
+        #cookie-consent-banner .button-group .btn-accept:hover {
+            background-color: #AECB2B;
+        }
+
+        #cookie-consent-banner .button-group .btn-decline {
+            background-color: var(--primary-purple);
+            color: #ECF0F1;
+        }
+        #cookie-consent-banner .button-group .btn-decline:hover {
+            background-color: #7B1FA2;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-charcoal-black text-white py-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="text-3xl font-extrabold text-electric-lime fredoka">Snacktum</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-electric-lime transition-colors duration-300">Home</a></li>
+                    <li><a href="blog.html" class="hover:text-electric-lime transition-colors duration-300">Blog</a></li>
+                    <li><a href="privacy.html" class="hover:text-electric-lime transition-colors duration-300">Privacy</a></li>
+                    <li><a href="terms.html" class="hover:text-electric-lime transition-colors duration-300">Terms</a></li>
+                    <li><a href="cookies.html" class="hover:text-electric-lime transition-colors duration-300">Cookies</a></li>
+                    <li><a href="contact.html" class="hover:text-electric-lime transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Cookie Policy Hero Section -->
+        <section class="bg-gradient-snacktum h-[400px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden mb-16">
+            <div class="p-8 rounded-lg bg-black bg-opacity-50">
+                <h1 class="text-6xl font-black text-white mb-4 leading-tight">Cookie Policy</h1>
+                <p class="text-2xl text-electric-lime fredoka">Understanding Your Digital Munchies</p>
+            </div>
+        </section>
+
+        <!-- Cookie Policy Content Section -->
+        <section id="cookie-content" class="container mx-auto px-4 py-16">
+            <div class="bg-charcoal-black p-8 rounded-2xl shadow-xl border-2 border-primary-purple text-justify">
+                <h2 class="text-4xl text-electric-lime mb-6 fredoka">Your Guide to Cookies on Snacktum</h2>
+                <p class="text-lg text-white mb-4">
+                    Welcome to Snacktum, "The Holy Place for Munch Worshippers"! Just as every great snack has layers of flavor, our website uses various technologies, including cookies, to enhance your browsing experience. This Cookie Policy explains what cookies are, how we use them, the types of cookies we use, how third-parties we may partner with may use cookies on the Service, your choices regarding cookies, and further information about cookies. By continuing to use our Site, you are consenting to our use of cookies in accordance with this policy. We believe in transparency and want to ensure you have a clear understanding of how these small data files impact your journey through the Snacktum realm.
+                </p>
+                <p class="text-lg text-white mb-4">
+                    This detailed policy is designed to empower you with knowledge, allowing you to make informed decisions about your privacy preferences. We understand that the world of digital tracking can seem complex, but we've broken it down into easily digestible "bites" so you can understand the purpose behind each cookie and how it contributes to a more personalized and efficient snacking experience on our platform. From remembering your favorite recipes to tailoring content that truly resonates with your snack cravings, cookies play a subtle yet significant role.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">1. What Are Cookies?</h3>
+                <p class="text-lg text-white mb-4">
+                    Cookies are small pieces of text sent by your web browser by a website you visit. A cookie file is stored in your web browser and allows the Service or a third-party to recognize you and make your next visit easier and the Service more useful to you. They are essentially digital memory aids for websites, designed to make your online experience smoother and more personalized. Think of them like tiny flavor profiles that a website remembers about your preferences.
+                    <br><br>
+                    When you visit a website, the website sends a cookie to your computer or mobile device. Your computer stores it in a file located inside your web browser. When you revisit the same website, the website retrieves the cookie from your computer. The information stored in the cookie can be used to track your activity on the website, remember your login details, or customize your experience. This fundamental mechanism allows for a seamless interaction, preventing you from having to re-enter information or preferences repeatedly, much like remembering your favorite snack order at your local munchie spot.
+                    <br><br>
+                    Cookies can be "persistent" or "session" cookies. Persistent cookies remain on your personal computer or mobile device when you go offline, while session cookies are deleted as soon as you close your web browser. Each type serves a distinct purpose, contributing to different aspects of your browsing experience, from long-term personalization to ensuring secure, single-session interactions. Understanding this distinction is key to comprehending how cookies operate behind the scenes.
+                    <br><br>
+                    They are not programs and do not contain viruses or malware. They are simply text files that contain small amounts of data. This data is often encrypted for security purposes, ensuring that only the originating website can read and interpret the information stored within them. Their primary function is to facilitate communication between your browser and the website, enabling features that would otherwise be cumbersome or impossible.
+                    <br><br>
+                    The use of cookies has become a standard practice across the internet, largely due to their utility in enhancing user experiences. Without cookies, many modern web functionalities, such as shopping carts, personalized dashboards, or even remembering your language preferences, would be significantly more challenging to implement. They are an invisible but integral part of the contemporary web.
+                    <br><br>
+                    It's important to differentiate cookies from other tracking technologies like web beacons or pixel tags, though they often work in conjunction. While cookies store data on your device, web beacons are tiny graphics that help monitor user behavior, often used in emails to track open rates. This policy primarily focuses on cookies but acknowledges the broader ecosystem of digital tracking.
+                    <br><br>
+                    The data within a cookie is typically anonymous and aggregated, meaning it doesn't directly identify you as an individual unless you have explicitly provided personal information to the website. Instead, it identifies your browser or device, allowing for generalized tracking of browsing patterns and preferences. This distinction is crucial for understanding the privacy implications of cookie usage.
+                    <br><br>
+                    Ultimately, cookies serve as a bridge between your current browsing session and your past interactions with a website. They enable websites to "remember" you, not necessarily as a person, but as a consistent user, thereby facilitating a more tailored and efficient online experience. This memory function is what makes many interactive web features possible and enjoyable.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">2. How Snacktum Uses Cookies</h3>
+                <p class="text-lg text-white mb-4">
+                    Snacktum uses cookies for several purposes to enhance your experience on our Site. We use them to enable certain functions of the Service, to provide analytics, to store your preferences, and to enable advertisements delivery, including behavioral advertising. Our aim is to make your journey through the "Holy Place for Munch Worshippers" as seamless and personalized as possible, much like a perfectly curated snack platter.
+                    <br><br>
+                    For instance, if you visit our "Snack Recipes" section and filter by "Epic Crunches," a cookie might remember this preference so that the next time you visit, those filters are already applied. This saves you time and effort, guiding you directly to the content you love without repeated actions. This personalization is key to our mission of celebrating snacks as a lifestyle.
+                    <br><br>
+                    We also use cookies to understand how our users interact with the site. This involves tracking which pages are most popular, how long users spend on certain sections, and their navigation paths. This analytical data, which is typically aggregated and anonymized, helps us identify areas for improvement, such as optimizing content layout or refining our "SnackHub Video Series" to better meet viewer engagement patterns.
+                    <br><br>
+                    Furthermore, cookies play a role in security, helping us identify and prevent fraudulent activity, ensuring that your interactions with Snacktum remain safe and secure. They act as a digital guardian, protecting the integrity of your account and our platform from unauthorized access or malicious behavior. This background security function is vital for maintaining trust.
+                    <br><br>
+                    When you interact with our "Snack-Saver Mode" feature, cookies are instrumental in remembering your bookmarked recipes and organizing them according to your chosen criteria. This allows for a consistent and convenient experience across multiple visits, ensuring your personalized snack library is always accessible and up-to-date, reflecting your evolving snack preferences.
+                    <br><br>
+                    Cookies also facilitate the delivery of relevant advertising. By understanding your browsing habits on Snacktum (e.g., if you frequently visit "Sweet + Salty Cravings"), we can present ads for products or services that align with your interests, making the advertising experience less intrusive and more valuable. This targeted approach aims to enhance the relevance of promotional content you encounter.
+                    <br><br>
+                    In essence, our use of cookies is multifaceted, serving both functional and analytical purposes. They are integral to delivering a high-quality, personalized, and secure experience on Snacktum. We are committed to using them responsibly and transparently, always with the goal of enhancing your journey as a "munch worshipper."
+                    <br><br>
+                    We also use cookies to manage your consent preferences. When you interact with our cookie consent banner, a cookie is set to remember your choice (accept or decline), so you don't have to make the same decision on every visit. This ensures a smoother and less repetitive user experience, respecting your privacy choices over time.
+                    <br><br>
+                    The data collected through cookies helps us understand the overall performance of our Site. For example, by tracking load times or error rates associated with certain features, we can identify and resolve technical issues more efficiently, ensuring that Snacktum remains a fast and reliable platform for all users. This continuous optimization relies heavily on cookie-derived insights.
+                    <br><br>
+                    Ultimately, cookies are a tool that allows Snacktum to function effectively, personalize your experience, and continuously improve our offerings. They enable us to deliver a tailored and efficient service, making your time on our Site more enjoyable and productive. Your understanding of their role is key to appreciating the seamless web experience we strive to provide.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">3. Types of Cookies We Use</h3>
+                <p class="text-lg text-white mb-4">
+                    Snacktum employs various types of cookies to achieve different functionalities and enhance your user experience. Understanding these categories will provide clarity on how your data is utilized. Each type serves a specific purpose, contributing to the overall performance and personalization of our Site.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">3.1. Strictly Necessary Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    These cookies are essential for the operation of our website. They enable you to navigate around the site and use its features, such as accessing secure areas or adding items to a shopping cart if we implement an e-commerce store for "Snacktum Swag." Without these cookies, services you have asked for, like remembering your login details or your cookie consent preferences, cannot be provided.
+                    <br><br>
+                    They are typically set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in, or filling in forms. These cookies do not store any personally identifiable information. Their primary role is to ensure the basic functionality and security of the website, making your fundamental interactions possible.
+                    <br><br>
+                    For example, if you were to add a "Snacktum Slogan Shirt" to your cart, a strictly necessary cookie would remember this item as you navigate to other pages, ensuring it's still there when you proceed to checkout. This prevents a frustrating user experience where your selections are lost.
+                    <br><br>
+                    Because these cookies are vital for the website to function correctly, they do not require your explicit consent under most privacy regulations, as their purpose is inherently tied to the service you are requesting. Disabling them would severely impair the usability of the site.
+                    <br><br>
+                    They are usually session-based, meaning they expire once you close your browser, but some may persist for a short period to remember basic settings like language preference for your next visit. Their lifespan is generally limited to the duration of your browsing session or a very short fixed period.
+                    <br><br>
+                    These cookies are fundamental to the "Snacktum" experience, ensuring that the core features of our "Holy Place for Munch Worshippers" are always accessible and reliable. They are the backbone of the site's operational integrity, allowing for basic navigation and interaction.
+                    <br><br>
+                    They might also be used for security purposes, such as detecting repeated failed login attempts or preventing cross-site request forgery attacks. Their role in maintaining the security posture of the website is often overlooked but critically important for protecting user data and site integrity.
+                    <br><br>
+                    Without strictly necessary cookies, the website would be a static, unresponsive entity, unable to remember any of your actions or preferences within a session. They are the silent enablers of dynamic web interactions, allowing you to move seamlessly between different parts of the site.
+                    <br><br>
+                    Their function is purely technical and operational, ensuring the website performs as expected. They do not gather information for marketing or analytical purposes, focusing solely on the core mechanics of the site. This clear distinction sets them apart from other cookie categories.
+                    <br><br>
+                    In summary, strictly necessary cookies are the invisible gears that keep the Snacktum machine running smoothly, ensuring that your basic interactions and navigation are always functional and secure. They are indispensable for a reliable web experience.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">3.2. Performance / Analytics Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    These cookies collect information about how you use our website, for instance, which pages you visit most often, and if you encounter any error messages. These cookies do not collect information that identifies you. All information these cookies collect is aggregated and therefore anonymous. They are only used to improve how a website works.
+                    <br><br>
+                    At Snacktum, we use these cookies to gain insights into user behavior, helping us understand what content resonates most with our "munch worshippers." For example, we can see if our "Snackified Meals" recipes are more popular than "Lazy Genius Bites," allowing us to tailor future content creation.
+                    <br><br>
+                    We might use tools like Google Analytics, which sets its own cookies, to gather this data. This helps us track metrics such as the number of visitors, the duration of their visits, and the source of their traffic (e.g., from a search engine or a social media link). This aggregated data is invaluable for strategic planning.
+                    <br><br>
+                    These cookies help us identify performance bottlenecks or areas where user engagement drops off. For instance, if a particular page has a high bounce rate, analytics cookies help us pinpoint that page for further investigation and optimization. This continuous improvement cycle is driven by data.
+                    <br><br>
+                    They are often persistent cookies, meaning they remain on your device for a longer period to track repeat visits and understand long-term trends in user behavior. This allows us to assess the effectiveness of ongoing campaigns or site redesigns over time.
+                    <br><br>
+                    While the information collected is anonymous, it provides a powerful statistical overview of how our Site is performing. This enables us to make data-driven decisions to enhance the user experience, making Snacktum more intuitive and enjoyable for everyone.
+                    <br><br>
+                    Performance cookies are crucial for optimizing our "SnackHub Video Series," allowing us to see which videos are watched most, where viewers drop off, and which formats are most engaging. This directly influences the production of future video content.
+                    <br><br>
+                    They also help us monitor the technical health of the site, identifying issues like slow loading times or broken features that might impact user satisfaction. By proactively addressing these, we ensure a smooth and frustration-free browsing experience.
+                    <br><br>
+                    In essence, performance and analytics cookies are our digital eyes and ears, providing the necessary data to continually refine and improve the Snacktum platform, ensuring it remains a leading destination for snack inspiration.
+                    <br><br>
+                    They do not track your personal identity or directly link your browsing habits to your name or email. Their focus is on collective behavior and site performance, offering a broad perspective rather than individual profiling. This commitment to anonymity is a core principle of our data collection for these purposes.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">3.3. Functionality Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    Functionality cookies allow our website to remember choices you make (such as your user name, language, or the region you are in) and provide enhanced, more personal features. For instance, if you customize your preferences in our "Flavor Builder," these cookies remember your selections.
+                    <br><br>
+                    They can also be used to remember changes you have made to text size, fonts, and other parts of web pages that you can customize. They may also be used to provide services you have asked for, such as watching a video or commenting on a blog.
+                    <br><br>
+                    The information these cookies collect may be anonymized, and they cannot track your browsing activity on other websites. Their purpose is to enhance your specific interactions with Snacktum, making your experience more convenient and tailored to your preferences.
+                    <br><br>
+                    For example, if you set a preference for "Sweet + Salty Cravings" as your primary interest, a functionality cookie ensures that relevant content is prioritized on your homepage during subsequent visits. This creates a more personalized and engaging user interface.
+                    <br><br>
+                    These cookies are crucial for features like "Snack-Saver Mode," where your bookmarked recipes are stored and organized locally based on your preferences. Without them, your personalized snack library would reset with each visit, diminishing its utility.
+                    <br><br>
+                    They help us provide a more seamless and intuitive user experience by remembering your past actions and settings. This reduces friction and allows you to pick up where you left off, much like remembering your favorite spot at a snack bar.
+                    <br><br>
+                    Functionality cookies are typically persistent, meaning they remain on your device for a longer period to ensure your preferences are remembered across multiple sessions. This long-term memory is what makes them so valuable for personalization.
+                    <br><br>
+                    They contribute significantly to the overall user satisfaction by making the website feel more responsive and intelligent. By remembering your choices, Snacktum can adapt to your individual needs and preferences, creating a more enjoyable browsing environment.
+                    <br><br>
+                    While they enhance personalization, they generally do not track your activity across different websites. Their scope is limited to improving your experience within the Snacktum domain, ensuring your privacy while still providing tailored features.
+                    <br><br>
+                    In essence, functionality cookies are the personal assistants of the Snacktum website, remembering your preferences and making sure your visit is as comfortable and efficient as possible, allowing you to focus on the joy of snacking.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">3.4. Targeting / Advertising Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    These cookies are used to deliver advertisements more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaign. They are usually placed by advertising networks with the website operator’s permission.
+                    <br><br>
+                    They remember that you have visited a website and this information is shared with other organizations such as advertisers. Quite often, targeting or advertising cookies will be linked to site functionality provided by the other organization. At Snacktum, this means if you browse our "Gamer Bites" section, you might see ads for gaming accessories or energy drinks on other sites.
+                    <br><br>
+                    These cookies track your browsing habits across different websites, building a profile of your interests. This profile is then used by advertising networks to serve you more relevant ads, aiming to make advertising less intrusive and more engaging for the user.
+                    <br><br>
+                    They are typically persistent cookies, remaining on your device for a longer duration to facilitate long-term tracking and profiling. This allows advertising campaigns to span multiple visits and different online platforms, creating a consistent advertising experience.
+                    <br><br>
+                    While these cookies are essential for the revenue generation that supports free content on many websites, including potentially Snacktum, we are committed to using them responsibly and transparently, respecting your privacy choices.
+                    <br><br>
+                    We may partner with third-party advertising companies, such as Google AdSense, which use their own cookies to deliver these targeted advertisements. These companies have their own privacy policies that govern their use of information.
+                    <br><br>
+                    You have control over these cookies. Most browsers allow you to block or delete them, and many advertising networks offer opt-out mechanisms. We provide information on how to manage your cookie preferences later in this policy.
+                    <br><br>
+                    The goal of advertising cookies is to make the ads you see more relevant to you, rather than displaying generic advertisements that may not hold any interest. This can lead to a more personalized online experience, even when it comes to promotional content.
+                    <br><br>
+                    It's important to note that opting out of advertising cookies does not mean you will no longer see ads; it simply means the ads you see may be less tailored to your specific interests, as they will not be based on your browsing history.
+                    <br><br>
+                    In summary, targeting and advertising cookies enable personalized advertising experiences across the web, contributing to the financial sustainability of free online content while offering users more relevant promotional material based on their inferred interests.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">3.5. First-Party Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    First-party cookies are cookies set by the website you are visiting – in this case, Snacktum.com. These cookies are typically used to enable core site functionality, remember your preferences, and gather anonymous analytics about how you use the site. They are directly controlled by us and are essential for providing a seamless and personalized experience on our platform.
+                    <br><br>
+                    For example, if you log into your Snacktum account to access "Snack-Saver Mode," a first-party cookie will remember your login status, so you don't have to re-enter your credentials on every page. This significantly enhances convenience and user flow within our site.
+                    <br><br>
+                    Similarly, if you interact with our "Flavor Builder" and save your preferred snack combinations, first-party cookies ensure these preferences are retained for your next visit, allowing for a consistent and tailored experience within the Snacktum realm.
+                    <br><br>
+                    These cookies are generally considered less intrusive than third-party cookies because they are set by the domain you are actively visiting and are typically used to improve your experience directly on that site, rather than tracking you across multiple websites.
+                    <br><br>
+                    First-party analytics cookies, while collecting data on user behavior, do so within the confines of Snacktum.com, providing us with insights into how our content and features are performing on our own platform. This data helps us optimize our site's layout, content strategy, and overall user journey.
+                    <br><br>
+                    They are crucial for maintaining the integrity of your session, for example, ensuring that your interactions with our "Snack Duel" feature are correctly recorded and attributed to your current browsing session. This prevents data inconsistencies and enhances the reliability of interactive elements.
+                    <br><br>
+                    The information collected by first-party cookies is used exclusively by Snacktum to improve our services and your experience on our Site. We do not share this data with external parties for their independent use, maintaining a strong commitment to your privacy.
+                    <br><br>
+                    These cookies are often session cookies, expiring when you close your browser, but some may be persistent to remember long-term preferences like your language setting or consent choices, ensuring a consistent experience across repeat visits.
+                    <br><br>
+                    In essence, first-party cookies are the internal mechanisms that allow Snacktum to "remember" your interactions and preferences directly, facilitating a more efficient, personalized, and enjoyable browsing experience within our "Holy Place for Munch Worshippers."
+                    <br><br>
+                    They are a fundamental component of modern web design, enabling dynamic and interactive functionalities that users have come to expect. Their direct relationship with the visited domain makes them integral to the core user experience.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">3.6. Third-Party Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    Third-party cookies are cookies set by a domain other than the one you are visiting. For example, if Snacktum.com includes content from a third-party, such as an embedded video from YouTube or an advertisement from Google, these third parties may set their own cookies on your browser.
+                    <br><br>
+                    These cookies are often used for cross-site tracking, analytics, and advertising purposes. They allow third parties to collect information about your browsing habits across different websites, building a more comprehensive profile of your interests.
+                    <br><br>
+                    At Snacktum, third-party cookies might be used by our advertising partners to deliver targeted advertisements that are more relevant to your interests, based on your browsing history across the web. This helps support our free content.
+                    <br><br>
+                    Another common use is for integrated social media features. If we have a "share" button for Facebook or Twitter, these platforms might set cookies when you interact with them, allowing them to track your activity on our site and potentially link it to your social media profile.
+                    <br><br>
+                    Third-party analytics services, like Google Analytics (though sometimes configured to be first-party), can also set third-party cookies to track aggregated user behavior across a network of sites, providing broader market insights.
+                    <br><br>
+                    It's important to note that Snacktum does not directly control these third-party cookies. Their use is governed by the privacy policies of the respective third-party providers. We strongly recommend reviewing their policies to understand how they handle your data.
+                    <br><br>
+                    You typically have more granular control over third-party cookies through your browser settings, allowing you to block them specifically or use browser extensions designed to limit cross-site tracking. This empowers you to manage your privacy preferences.
+                    <br><br>
+                    While third-party cookies contribute to the functionality and financial sustainability of many online services, we are committed to ensuring that their presence on Snacktum is transparent and that you are informed about their purpose and how to manage them.
+                    <br><br>
+                    They can also be used for retargeting campaigns, where an advertiser shows you ads for products you viewed on another website. This is a common practice in online advertising, aiming to convert interest into sales.
+                    <br><br>
+                    In summary, third-party cookies are set by external domains embedded within Snacktum, primarily for advertising, analytics, and social media integration. While not directly controlled by us, we aim to provide you with the necessary information to manage your consent and preferences regarding these cookies.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">3.7. Session Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    Session cookies are temporary cookies that remain in the cookie file of your browser only for the duration of your visit to the website. They are deleted as soon as you close your web browser. Their primary purpose is to enable the website to recognize you as you navigate from page to page within a single browsing session.
+                    <br><br>
+                    At Snacktum, session cookies are crucial for maintaining your current state as you browse through our "Snack Categories" or add items to a potential "Snacktum Swag" shopping cart. Without them, the website would treat each page load as a completely new visit, leading to a fragmented and frustrating experience.
+                    <br><br>
+                    For instance, if you're exploring different "Epic Crunches" recipes, a session cookie ensures that the website remembers your current selections or filters as you click through to view individual recipe details. This seamless navigation is fundamental to user satisfaction.
+                    <br><br>
+                    They are also vital for security, helping to authenticate you during a session if you are logged into your Snacktum account. This prevents unauthorized access to your account as you move between different secure areas of the site.
+                    <br><br>
+                    Session cookies do not collect information from your computer. They typically contain a unique identifier that allows the website to link your actions during a particular session. This identifier is usually a randomly generated number and does not contain any personal information.
+                    <br><br>
+                    Because of their temporary nature and their role in facilitating basic site functionality within a single session, session cookies are generally considered less privacy-invasive than persistent cookies. They are essential for the smooth operation of dynamic websites.
+                    <br><br>
+                    They are automatically deleted when you end your browsing session, meaning they do not leave any lasting trace on your device after you close your browser. This ephemeral quality ensures that your session-specific data is not retained long-term.
+                    <br><br>
+                    Session cookies are fundamental for ensuring the integrity of interactions, such as participating in a "Snack Duel" vote. They ensure that your vote is correctly recorded within that specific session and not duplicated or misattributed.
+                    <br><br>
+                    In summary, session cookies are the short-term memory of the Snacktum website, enabling smooth navigation, maintaining your session state, and ensuring basic security during your active visit. They are automatically cleared upon browser closure, leaving no persistent data.
+                    <br><br>
+                    They are a cornerstone of interactive web experiences, allowing for features like form submissions, login sessions, and shopping cart functionality to work correctly and securely within a single user visit.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">3.8. Persistent Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    Persistent cookies, also known as permanent cookies or stored cookies, remain on your computer or mobile device even after you close your web browser. They stay on your device for a set period of time, which can range from a few hours to several years, or until you manually delete them.
+                    <br><br>
+                    These cookies are used to remember your preferences or actions across multiple visits to a website. At Snacktum, persistent cookies might be used to remember your language preference, your cookie consent choices, or your login details (if you opt for "remember me").
+                    <br><br>
+                    For example, if you visit our "Snack Sermons" blog and adjust the font size for readability, a persistent cookie could remember this setting for your next visit, providing a consistent viewing experience without requiring you to re-customize.
+                    <br><br>
+                    They are also commonly used for analytics purposes, allowing us to track how users interact with our site over longer periods. This helps us understand long-term trends, such as the overall popularity of certain "Snack Categories" or the effectiveness of seasonal campaigns.
+                    <br><br>
+                    Advertising networks frequently use persistent cookies to build a profile of your browsing habits across different websites over time. This enables them to deliver more targeted and relevant advertisements to you, even after you've left Snacktum.
+                    <br><br>
+                    While persistent cookies offer significant benefits in terms of personalization and convenience, they also raise more privacy concerns due to their long-term storage of information. This is why many privacy regulations, like GDPR, focus heavily on obtaining explicit consent for their use.
+                    <br><br>
+                    The lifespan of a persistent cookie is determined by its creator. Some may expire after a few days, while others might be set to expire after a year or more. You always have the option to delete these cookies manually through your browser settings at any time.
+                    <br><br>
+                    Persistent cookies are crucial for features like "Snack-Saver Mode," where your personalized collection of recipes needs to be retained between different browsing sessions. They ensure that your curated snack library is always available when you return.
+                    <br><br>
+                    In summary, persistent cookies are designed for long-term memory, retaining your preferences, login status, and behavioral data across multiple visits to Snacktum. While offering convenience and enabling advanced features, their long-term nature necessitates careful consideration and transparent consent.
+                    <br><br>
+                    They are distinct from session cookies in their duration and their ability to track user behavior over extended periods, making them a powerful tool for personalization and targeted content delivery across the web.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">4. Cookie Consent and Control</h3>
+                <p class="text-lg text-white mb-4">
+                    Your privacy is important to us, and we are committed to providing you with control over your cookie preferences. This section details how we obtain consent and how you can manage the cookies used on Snacktum. We believe in empowering you to make informed choices about your digital footprint as you navigate our "Holy Place for Munch Worshippers."
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">4.1. Obtaining Your Consent</h4>
+                <p class="text-lg text-white mb-4">
+                    Upon your first visit to Snacktum, you will see a prominent cookie consent banner at the bottom of the page. This banner is designed to inform you about our use of cookies and to provide you with clear options to accept or decline them. We aim for this process to be as transparent and user-friendly as possible, aligning with best practices for privacy regulations.
+                    <br><br>
+                    By clicking "Accept" on the banner, you are providing your explicit consent for us to place all types of cookies (including performance, functionality, and advertising cookies) on your device as described in this policy. This action signifies your agreement to the full range of cookie functionalities that enhance your Snacktum experience.
+                    <br><br>
+                    If you click "Decline," we will only place strictly necessary cookies on your device, as these are essential for the basic operation and security of the website. Other types of cookies, such as those for analytics or targeted advertising, will not be deployed. This ensures that your choice to limit tracking is respected.
+                    <br><br>
+                    Your consent choice is stored in a persistent cookie, so you will not be prompted on every subsequent visit unless you clear your browser's cookies or the consent cookie expires. This provides a seamless experience while still honoring your initial preference.
+                    <br><br>
+                    We periodically review our consent mechanisms to ensure they remain compliant with evolving privacy laws and user expectations. Our goal is to make the consent process clear, concise, and easy to understand, avoiding any deceptive practices.
+                    <br><br>
+                    The banner provides a link to this comprehensive Cookie Policy, allowing you to delve deeper into the specifics of each cookie type and their purpose before making your decision. This ensures that your consent is truly informed.
+                    <br><br>
+                    We understand that consent is not a one-time event. You can always revisit your preferences by clearing your browser cookies or by looking for a "Cookie Settings" link (if implemented) usually found in the footer of the website.
+                    <br><br>
+                    Our approach to obtaining consent is rooted in the principles of transparency and user control. We want you to feel empowered in managing your online privacy while enjoying all the delicious content Snacktum has to offer.
+                    <br><br>
+                    This initial interaction is crucial for establishing a respectful relationship regarding your data. We aim to provide all the necessary information upfront, enabling you to make a decision that aligns with your personal privacy comfort level.
+                    <br><br>
+                    In summary, your consent is actively sought through a clear banner, allowing you to choose between accepting all cookies for a fully personalized experience or declining non-essential cookies while still accessing core site functionality.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">4.2. Managing Cookies Through Browser Settings</h4>
+                <p class="text-lg text-white mb-4">
+                    Beyond our consent banner, the most comprehensive way to manage cookies is through your web browser's settings. Most browsers allow you to control cookies through their settings preferences. You can set your browser to accept or reject all cookies, or to notify you when a cookie is being sent, giving you the option to accept or reject it on a case-by-case basis.
+                    <br><br>
+                    The exact steps to manage cookies vary depending on the browser you are using. Below are links to the cookie management pages for common browsers:
+                    <br>
+                    <ul class="list-disc list-inside text-gray-300 mb-4 ml-4">
+                        <li><strong>Google Chrome:</strong> <a href="https://support.google.com/chrome/answer/95647" target="_blank" class="text-digital-cyan hover:underline">https://support.google.com/chrome/answer/95647</a></li>
+                        <li><strong>Mozilla Firefox:</strong> <a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" class="text-digital-cyan hover:underline">https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences</a></li>
+                        <li><strong>Apple Safari:</strong> <a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank" class="text-digital-cyan hover:underline">https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac</a></li>
+                        <li><strong>Microsoft Edge:</strong> <a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-5791-ad5d1764ba64" target="_blank" class="text-digital-cyan hover:underline">https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-5791-ad5d1764ba64</a></li>
+                    </ul>
+                    <br>
+                    Blocking all cookies may impact the functionality of Snacktum and many other websites you visit. For example, you might not be able to log into your account, use features like "Snack-Saver Mode," or experience personalized content. This is because strictly necessary cookies, which enable these features, would also be blocked.
+                    <br><br>
+                    Deleting cookies through your browser will remove all cookies, including those that remember your consent preferences. This means you will likely be prompted again for cookie consent on your next visit to Snacktum or other sites.
+                    <br><br>
+                    Browser settings often allow you to distinguish between first-party and third-party cookies, giving you more granular control. You might choose to block all third-party cookies while allowing first-party cookies to maintain essential site functionality and personalization.
+                    <br><br>
+                    It's a good practice to periodically review your browser's cookie settings and clear cookies to maintain your privacy. However, be aware that this might reset your preferences on frequently visited sites.
+                    <br><br>
+                    Managing cookies at the browser level provides a powerful tool for overall internet privacy, allowing you to control the data stored on your device by various websites. This control extends beyond individual site consent banners.
+                    <br><br>
+                    Consider using privacy-focused browser extensions that offer more advanced cookie management features, such as automatically blocking third-party tracking cookies or providing detailed insights into the cookies being used on a page.
+                    <br><br>
+                    Ultimately, your browser is your primary gateway to the internet, and understanding its cookie management capabilities is essential for taking full control of your online privacy and tailoring your browsing experience to your preferences.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">4.3. Opting Out of Specific Advertising Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    In addition to managing cookies through your browser settings, you can often opt-out of specific advertising cookies directly through industry opt-out programs. These programs allow you to opt-out of targeted advertising from participating companies across multiple websites.
+                    <br><br>
+                    For users in the European Economic Area (EEA) and the UK, you can visit the European Interactive Digital Advertising Alliance (EDAA) opt-out page: <a href="http://www.youronlinechoices.eu/" target="_blank" class="text-digital-cyan hover:underline">http://www.youronlinechoices.eu/</a>.
+                    <br><br>
+                    For users in the United States, you can visit the Digital Advertising Alliance (DAA) opt-out page: <a href="http://www.aboutads.info/choices/" target="_blank" class="text-digital-cyan hover:underline">http://www.aboutads.info/choices/</a> or the Network Advertising Initiative (NAI) opt-out page: <a href="http://optout.networkadvertising.org/?c=1" target="_blank" class="text-digital-cyan hover:underline">http://optout.networkadvertising.org/?c=1</a>.
+                    <br><br>
+                    These opt-out mechanisms typically work by placing a special "opt-out cookie" on your browser, which signals to participating advertisers that you do not wish to receive targeted ads. It's important to note that if you clear your browser's cookies, you will also remove these opt-out cookies and will need to opt-out again.
+                    <br><br>
+                    Opting out of advertising cookies does not mean you will no longer see advertisements. It simply means that the ads you see will be less relevant to your interests, as they will not be based on your browsing behavior tracked by these specific advertising networks. You will still see generic or contextual ads.
+                    <br><br>
+                    These industry opt-out tools are a valuable resource for users who want to reduce personalized advertising across the web without completely blocking all cookies, which might impact website functionality.
+                    <br><br>
+                    We encourage you to explore these options if you are concerned about targeted advertising. They provide a centralized way to manage your preferences across a wide range of advertising partners.
+                    <br><br>
+                    Remember that these opt-outs are specific to the browser and device you are using. If you use multiple browsers or devices, you will need to opt-out on each one individually to achieve comprehensive coverage.
+                    <br><br>
+                    While Snacktum strives to be transparent about its own cookie usage, the behavior of third-party advertising partners is governed by their own policies and these industry-wide opt-out mechanisms.
+                    <br><br>
+                    In summary, industry opt-out pages offer a way to specifically control targeting and advertising cookies from a broad range of participating companies, providing an additional layer of privacy control beyond browser settings.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">4.4. Impact of Declining Cookies</h4>
+                <p class="text-lg text-white mb-4">
+                    Choosing to decline cookies, particularly non-essential ones, will impact your experience on Snacktum. While we will still ensure the basic functionality of the site by using strictly necessary cookies, certain features and personalization aspects will be limited or unavailable.
+                    <br><br>
+                    For example, if you decline performance cookies, we will have less data on how users interact with our site, which may hinder our ability to identify and fix issues, or to optimize content like our "SnackHub Video Series" for better engagement. Our continuous improvement efforts rely on these insights.
+                    <br><br>
+                    Declining functionality cookies means that Snacktum will not be able to remember your preferences between visits. This includes things like your preferred language, any custom settings you apply in a "Flavor Builder" (if implemented), or your saved recipes in "Snack-Saver Mode." Each visit might feel like your first, requiring you to re-enter preferences.
+                    <br><br>
+                    If you decline targeting/advertising cookies, you will still see advertisements on Snacktum (if we display them), but they will be less relevant to your interests. These ads will be generic or contextual, rather than tailored based on your browsing history across other websites.
+                    <br><br>
+                    The overall user experience might feel less seamless and personalized. Features that rely on remembering your past interactions or preferences will not function as intended, potentially requiring more manual input from you.
+                    <br><br>
+                    It's important to weigh the benefits of enhanced privacy against the potential reduction in convenience and personalization. Your choice is always respected, and we aim to provide a functional experience regardless of your cookie preferences.
+                    <br><br>
+                    Some interactive elements or third-party integrations might also be affected. For instance, if certain social media sharing buttons rely on cookies to function, they might not work correctly if you decline all non-essential cookies.
+                    <br><br>
+                    We recommend reviewing your cookie preferences periodically and adjusting them as your comfort level with data collection evolves. You can always change your mind and update your consent choices.
+                    <br><br>
+                    In summary, declining non-essential cookies on Snacktum will limit personalization, reduce our ability to optimize the site based on user behavior, and result in less relevant advertising, while basic site functionality will remain intact.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">5. Cookie Duration and Lifespan</h3>
+                <p class="text-lg text-white mb-4">
+                    The lifespan of a cookie varies significantly depending on its type and purpose. Understanding how long cookies remain on your device is an important aspect of managing your privacy.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">5.1. Session-Based Lifespan</h4>
+                <p class="text-lg text-white mb-4">
+                    As previously mentioned, session cookies are temporary and are designed to expire as soon as you close your web browser. Their lifespan is limited to the duration of your active browsing session. Once the browser window is closed, these cookies are automatically deleted from your device.
+                    <br><br>
+                    This short lifespan makes them ideal for maintaining session-specific information, such as remembering items in a shopping cart, maintaining login status during a single visit, or tracking your progress through a multi-step form. They do not retain any information after your session ends.
+                    <br><br>
+                    For example, if you are logged into your Snacktum account to access "Snack-Saver Mode," a session cookie ensures you remain logged in as you navigate between different recipe pages. Once you close your browser, that login session cookie is gone, requiring you to log in again on your next visit (unless a persistent "remember me" cookie is also used).
+                    <br><br>
+                    Their ephemeral nature contributes to their lower privacy risk profile, as they do not store long-term data about your browsing habits. They are purely functional for the immediate interaction.
+                    <br><br>
+                    This automatic deletion mechanism provides a clean slate for each new browsing session, ensuring that temporary data does not accumulate on your device unnecessarily.
+                    <br><br>
+                    In summary, session cookies have a very short lifespan, tied directly to your active browsing session, and are automatically deleted upon browser closure, serving only to facilitate immediate site functionality.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">5.2. Persistent Lifespan</h4>
+                <p class="text-lg text-white mb-4">
+                    Persistent cookies, in contrast, have a defined expiration date set by the website that creates them. This lifespan can range from a few minutes or hours to several months or even years. They remain on your device until their expiration date is reached or until you manually delete them.
+                    <br><br>
+                    These cookies are used for long-term tracking and remembering preferences across multiple visits. For example, a persistent cookie might remember your consent choice for our cookie banner for a year, preventing you from seeing it on every visit.
+                    <br><br>
+                    Analytics cookies are often persistent, allowing us to track user behavior over extended periods, such as understanding how many times a user returns to the "Snack Recipes" section over a month or a year. This helps us analyze long-term engagement trends.
+                    <br><br>
+                    Advertising cookies are typically persistent, enabling ad networks to build a profile of your interests over time and across various websites. Their long lifespan allows for more sophisticated targeting and retargeting campaigns.
+                    <br><br>
+                    The specific duration of each persistent cookie is determined by the third party that sets it (for third-party cookies) or by Snacktum (for first-party persistent cookies). This duration is chosen based on the purpose of the cookie.
+                    <br><br>
+                    You have the power to override this set lifespan by manually clearing your browser's cookies at any time. This will delete all persistent cookies stored on your device.
+                    <br><br>
+                    While persistent cookies offer significant benefits in terms of personalization and convenience, their long-term nature is why privacy regulations often require explicit consent for their use.
+                    <br><br>
+                    In summary, persistent cookies have a predefined lifespan, allowing them to remain on your device for extended periods to remember preferences, facilitate long-term analytics, and enable targeted advertising across multiple sessions.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">6. Data Collected by Cookies</h3>
+                <p class="text-lg text-white mb-4">
+                    Cookies collect various types of data, depending on their purpose. It's important to understand what kind of information is gathered to provide transparency about our data practices.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">6.1. Anonymous and Aggregated Data</h4>
+                <p class="text-lg text-white mb-4">
+                    Many cookies, particularly performance and analytics cookies, collect data that is anonymous and aggregated. This means the information cannot be used to identify you personally. Instead, it focuses on broad patterns and statistics.
+                    <br><br>
+                    Examples include the number of unique visitors to a page, the average time spent on our "Snack Sermons" blog, the type of device used to access Snacktum (e.g., mobile, desktop), or the geographical region of visitors (without pinpointing exact locations).
+                    <br><br>
+                    This data is crucial for understanding overall site performance and user trends, allowing us to make improvements that benefit the entire Snacktum community, without intruding on individual privacy.
+                    <br><br>
+                    It helps us answer questions like "Which snack categories are most popular this month?" or "Are users finding our 'SnackHub Video Series' easy to navigate?" The insights derived are statistical, not personal.
+                    <br><br>
+                    This type of data is often used for internal reporting, optimizing website design, and improving content strategy. It allows us to enhance the user experience based on collective behavior.
+                    <br><br>
+                    In summary, anonymous and aggregated cookie data provides valuable statistical insights into site usage and performance without compromising individual user identity.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">6.2. Pseudonymized Data</h4>
+                <p class="text-lg text-white mb-4">
+                    Some cookies collect pseudonymized data. This means the data is linked to a unique identifier (like a random string of characters) rather than directly to your name or email address. While this identifier doesn't immediately reveal your identity, it can potentially be linked back to you if combined with other information.
+                    <br><br>
+                    For example, a cookie might assign a unique ID to your browser. This ID then tracks your browsing history on Snacktum (e.g., pages visited, features interacted with). While we don't know "who" ID X is, we know that ID X visited "Epic Crunches" five times this week.
+                    <br><br>
+                    This type of data is often used for personalization and targeted advertising. It allows us to tailor content or ads to your inferred interests without knowing your direct personal details.
+                    <br><br>
+                    The pseudonymization process is a key privacy enhancement, as it reduces the direct link between data and an identifiable individual, while still allowing for personalized experiences.
+                    <br><br>
+                    In summary, pseudonymized cookie data uses unique identifiers to track browsing behavior for personalization and advertising, without directly revealing your personal identity, though it can potentially be linked with additional information.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">6.3. Directly Identifiable Data</h4>
+                <p class="text-lg text-white mb-4">
+                    In limited circumstances, cookies may store directly identifiable data, but this typically only occurs when you have explicitly provided that information to us and consented to its storage.
+                    <br><br>
+                    For instance, if you choose the "Remember Me" option when logging into your Snacktum account, a cookie might store an encrypted version of your username or a token that directly links to your account. This is for your convenience and requires your active choice.
+                    <br><br>
+                    Similarly, if you use features like "Snack-Saver Mode" that require you to be logged in to save preferences, the cookies associated with your login session would indirectly link your activity to your identifiable account.
+                    <br><br>
+                    We exercise extreme caution with directly identifiable data and employ robust security measures, including encryption, to protect it. This type of data is only collected and stored when absolutely necessary for providing the requested service and with your explicit consent.
+                    <br><br>
+                    In summary, directly identifiable cookie data is rarely stored and only with explicit consent, primarily for features like "remember me" logins, where your convenience is prioritized and security measures are paramount.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">7. Purposes of Cookie Usage</h3>
+                <p class="text-lg text-white mb-4">
+                    Cookies serve various critical purposes on the Snacktum website, all aimed at enhancing your experience and ensuring the efficient operation of our platform.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">7.1. Site Functionality and Essential Operations</h4>
+                <p class="text-lg text-white mb-4">
+                    The primary purpose of many cookies is to ensure the basic functionality of Snacktum. These "strictly necessary" cookies enable core features that allow you to navigate the site, access secure areas, and perform essential actions.
+                    <br><br>
+                    They remember your preferences within a session, such as your language choice or the items you've added to a potential shopping cart for "Snacktum Swag." Without them, the site would be unable to maintain your state as you move from page to page.
+                    <br><br>
+                    These cookies are also vital for security, helping to authenticate users, prevent fraudulent activity, and protect your account from unauthorized access. They are the digital guardians of our "Holy Place for Munch Worshippers."
+                    <br><br>
+                    Examples include cookies that manage your login session, remember your cookie consent preferences, or ensure the proper display of content based on your device type.
+                    <br><br>
+                    In summary, site functionality cookies are indispensable for the basic operation, security, and seamless navigation of Snacktum, enabling essential user interactions.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">7.2. Personalization and User Experience Enhancement</h4>
+                <p class="text-lg text-white mb-4">
+                    Cookies play a significant role in personalizing your experience on Snacktum, tailoring content and features to your individual preferences and past interactions.
+                    <br><br>
+                    They remember your choices, such as your preferred "Snack Categories" or your customized settings in our "Flavor Builder." This allows us to present content that is most relevant and engaging to your specific snack cravings.
+                    <br><br>
+                    For instance, if you frequently visit "Sweet + Salty Cravings" recipes, cookies help us prioritize similar content on your homepage or in our recommendations, making your browsing more efficient and enjoyable.
+                    <br><br>
+                    This personalization extends to remembering your login details (if you opt-in) and your progress in interactive features like quizzes or "Snack Duel" votes, creating a consistent and familiar environment.
+                    <br><br>
+                    In summary, personalization cookies enhance your user experience by remembering your preferences and tailoring content, making your journey through Snacktum more relevant and enjoyable.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">7.3. Analytics and Performance Monitoring</h4>
+                <p class="text-lg text-white mb-4">
+                    Analytics cookies help us understand how users interact with Snacktum, providing valuable insights into site performance, content popularity, and areas for improvement.
+                    <br><br>
+                    They collect anonymous and aggregated data on metrics such as page views, time spent on pages, navigation paths, and referral sources. This helps us identify trends and optimize our site's design and content strategy.
+                    <br><br>
+                    For example, by analyzing which "SnackHub Video Series" episodes are most watched or which blog posts ("Snack Sermons") receive the most engagement, we can make data-driven decisions to create more of what our audience loves.
+                    <br><br>
+                    These cookies also help us monitor the technical health of the site, identifying issues like slow loading times or broken features that might impact user satisfaction.
+                    <br><br>
+                    In summary, analytics cookies provide Snacktum with crucial insights into user behavior and site performance, enabling continuous improvement and optimization of our platform.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">7.4. Advertising and Marketing</h4>
+                <p class="text-lg text-white mb-4">
+                    Advertising cookies are used to deliver more relevant advertisements to you, both on Snacktum and across other websites you visit.
+                    <br><br>
+                    They track your browsing habits and interests to build a profile that allows advertising networks to serve you targeted ads. This aims to make advertising less intrusive and more valuable by showing you products or services you might actually be interested in.
+                    <br><br>
+                    These cookies also help us measure the effectiveness of our advertising campaigns, allowing us to understand which ads are performing well and to optimize our marketing efforts.
+                    <br><br>
+                    While these cookies contribute to the financial sustainability of our free content, we are committed to transparency and providing you with control over your advertising preferences.
+                    <br><br>
+                    In summary, advertising cookies enable targeted marketing and help measure campaign effectiveness, contributing to the financial viability of Snacktum while aiming to provide users with more relevant promotional content.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">7.5. Social Media Integration</h4>
+                <p class="text-lg text-white mb-4">
+                    Snacktum may integrate with social media platforms, allowing you to share our content (like a favorite recipe or a "Snack Sermon" blog post) directly from our Site. When you interact with these social media features, the respective platforms may set their own cookies.
+                    <br><br>
+                    These cookies enable functionalities like "share" buttons or embedded social media feeds. They may also track your activity on Snacktum and link it to your social media profile, depending on your privacy settings on those platforms.
+                    <br><br>
+                    For example, if you click a Facebook "Like" button on a Snacktum recipe, Facebook might set a cookie to remember this action and potentially show you related content on their platform.
+                    <br><br>
+                    These are typically third-party cookies, and their use is governed by the privacy policies of the social media platforms themselves. We encourage you to review their policies to understand their data practices.
+                    <br><br>
+                    In summary, social media integration cookies facilitate sharing and interaction with social platforms directly from Snacktum, with their data handling governed by the respective social media providers' policies.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">8. Cookie Security and Privacy</h3>
+                <p class="text-lg text-white mb-4">
+                    We take the security and privacy of your data seriously, including the information collected through cookies. This section outlines our commitment to safeguarding your data.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">8.1. Data Encryption</h4>
+                <p class="text-lg text-white mb-4">
+                    While cookies themselves are small text files, any sensitive data transmitted to or from Snacktum via cookies is protected using industry-standard encryption technologies, specifically SSL (Secure Sockets Layer) or TLS (Transport Layer Security).
+                    <br><br>
+                    This encryption ensures that the data exchanged between your browser and our servers remains private and secure, preventing unauthorized interception or access by malicious third parties.
+                    <br><br>
+                    For example, if a cookie is used to remember your login token, that token is transmitted over an encrypted channel, making it extremely difficult for anyone to intercept and decipher it.
+                    <br><br>
+                    In summary, Snacktum employs encryption for data transmitted via cookies to ensure the privacy and security of your information during online interactions.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">8.2. Data Minimization</h4>
+                <p class="text-lg text-white mb-4">
+                    We adhere to the principle of data minimization, meaning we only collect the necessary data through cookies that is relevant and required for the stated purposes. We avoid collecting excessive or irrelevant information.
+                    <br><br>
+                    For instance, a cookie designed to remember your language preference will only store information about your language choice, not your entire browsing history or personal details.
+                    <br><br>
+                    This approach reduces the amount of data that could potentially be compromised in the unlikely event of a security breach, further protecting your privacy.
+                    <br><br>
+                    In summary, Snacktum practices data minimization with cookies, collecting only essential information to fulfill specific purposes, thereby enhancing your privacy and data security.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">8.3. Regular Security Audits</h4>
+                <p class="text-lg text-white mb-4">
+                    Our security protocols, including those related to cookie management, are regularly reviewed and updated. We conduct periodic security audits to identify and address potential vulnerabilities, ensuring our systems remain robust against evolving cyber threats.
+                    <br><br>
+                    This proactive approach to security helps us maintain the integrity of our Site and the data collected through cookies, providing you with a safe environment to explore the world of snacks.
+                    <br><br>
+                    In summary, Snacktum conducts regular security audits to ensure the ongoing protection of data collected via cookies, maintaining a secure online environment for users.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">8.4. Third-Party Cookie Security</h4>
+                <p class="text-lg text-white mb-4">
+                    While we strive to partner with reputable third parties, we do not have direct control over the security practices of external domains that set third-party cookies on our Site.
+                    <br><br>
+                    We encourage you to review the privacy and security policies of any third-party websites or services linked from Snacktum, especially those that set cookies, to understand their data protection measures.
+                    <br><br>
+                    In summary, while Snacktum maintains robust internal security, users are encouraged to review the security practices of third parties whose cookies may be present on the Site.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">8.5. User Responsibility for Security</h4>
+                <p class="text-lg text-white mb-4">
+                    While Snacktum implements robust security measures, your own online security practices also play a crucial role. This includes using strong, unique passwords for your Snacktum account, being cautious of phishing attempts, and regularly updating your web browser.
+                    <br><br>
+                    Keeping your browser updated ensures you benefit from the latest security patches that protect against cookie-related vulnerabilities. Regularly clearing your browser's cookies can also enhance your privacy.
+                    <br><br>
+                    In summary, users share responsibility for security by practicing good online hygiene, including strong passwords, vigilance against phishing, and regular browser and cookie maintenance.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">9. Legal Basis for Cookie Processing (GDPR)</h3>
+                <p class="text-lg text-white mb-4">
+                    For users in the European Economic Area (EEA) and the UK, our processing of data via cookies is based on specific legal grounds as required by the General Data Protection Regulation (GDPR).
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">9.1. Consent as Legal Basis</h4>
+                <p class="text-lg text-white mb-4">
+                    For most non-essential cookies, such as performance, functionality, and advertising cookies, our legal basis for processing your data is your explicit consent. This consent is obtained through our cookie consent banner upon your first visit to Snacktum.
+                    <br><br>
+                    You have the right to withdraw this consent at any time, which will prevent us from setting non-essential cookies on your device going forward. This withdrawal does not affect the lawfulness of processing based on consent before its withdrawal.
+                    <br><br>
+                    In summary, explicit consent obtained via the cookie banner serves as the legal basis for processing data through non-essential cookies for EEA/UK users.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">9.2. Legitimate Interests as Legal Basis</h4>
+                <p class="text-lg text-white mb-4">
+                    In some limited cases, particularly for strictly necessary cookies that are essential for the operation and security of the Site, our legal basis for processing may be our legitimate interests.
+                    <br><br>
+                    These legitimate interests include maintaining the security and integrity of Snacktum, preventing fraud, and ensuring the basic functionality that users expect from a website. These cookies are fundamental to providing the service you access.
+                    <br><br>
+                    In summary, for strictly necessary cookies, Snacktum's legitimate interests in ensuring site security and functionality serve as the legal basis for data processing.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">9.3. Contractual Necessity</h4>
+                <p class="text-lg text-white mb-4">
+                    In very specific scenarios, where cookies are integral to fulfilling a contract with you (e.g., maintaining your shopping cart for a purchase of "Snacktum Swag"), the processing may be based on contractual necessity.
+                    <br><br>
+                    This applies when the cookie's function is directly required to provide a service that you have explicitly requested and entered into an agreement for.
+                    <br><br>
+                    In summary, cookies essential for fulfilling a direct service agreement, like maintaining a shopping cart during a transaction, may be processed based on contractual necessity.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">10. Your Rights Regarding Cookies (GDPR & CCPA)</h3>
+                <p class="text-lg text-white mb-4">
+                    Depending on your location and applicable privacy laws, you have certain rights regarding the personal data collected through cookies.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.1. Right to Access</h4>
+                <p class="text-lg text-white mb-4">
+                    You have the right to request access to the personal data we hold about you, including data collected through cookies. This allows you to verify what information we have and ensure its accuracy.
+                    <br><br>
+                    To exercise this right, please contact us using the information provided at the end of this policy. We will respond within the legally required timeframe.
+                    <br><br>
+                    In summary, you have the right to access your personal data collected via cookies, and can request this information from Snacktum.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.2. Right to Rectification</h4>
+                <p class="text-lg text-white mb-4">
+                    If you believe that any personal data we hold about you, including data potentially linked through cookies, is inaccurate or incomplete, you have the right to request its correction or completion.
+                    <br><br>
+                    We are committed to maintaining accurate records and will update your information promptly upon verification of your request.
+                    <br><br>
+                    In summary, you can request correction of inaccurate or incomplete personal data, including cookie-related information, held by Snacktum.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.3. Right to Erasure (Right to be Forgotten)</h4>
+                <p class="text-lg text-white mb-4">
+                    You have the right to request the deletion of your personal data, including data associated with cookies, under certain conditions. This is often referred to as the "right to be forgotten."
+                    <br><br>
+                    Conditions for erasure include when the data is no longer necessary for the purposes for which it was collected, or when you withdraw consent and there is no other legal basis for processing.
+                    <br><br>
+                    In summary, you can request the erasure of your personal data and associated cookie data under specific conditions, exercising your "right to be forgotten."
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.4. Right to Restrict Processing</h4>
+                <p class="text-lg text-white mb-4">
+                    You have the right to request that we restrict the processing of your personal data under certain circumstances. This means we can store the data but not use it further.
+                    <br><br>
+                    This right can be exercised, for example, if you contest the accuracy of the data, or if the processing is unlawful but you oppose erasure.
+                    <br><br>
+                    In summary, you can request a restriction on the processing of your personal data, including cookie data, under specific conditions, limiting its use by Snacktum.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.5. Right to Object to Processing</h4>
+                <p class="text-lg text-white mb-4">
+                    You have the right to object to our processing of your personal data, including data collected through cookies, under certain conditions, particularly when processing is based on legitimate interests or for direct marketing.
+                    <br><br>
+                    If you object to direct marketing, we will cease processing your data for that purpose. For other objections, we will assess if there are compelling legitimate grounds for continued processing.
+                    <br><br>
+                    In summary, you can object to the processing of your personal data, including cookie data, especially for direct marketing or when based on legitimate interests.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.6. Right to Data Portability</h4>
+                <p class="text-lg text-white mb-4">
+                    You have the right to request that we transfer the data that we have collected from you to another organization, or directly to you, in a structured, commonly used, and machine-readable format, under certain conditions.
+                    <br><br>
+                    This right applies to data processed by automated means where the processing is based on consent or on a contract.
+                    <br><br>
+                    In summary, you have the right to request your personal data, including cookie-related data, in a portable format for transfer to yourself or another organization.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.7. Right to Withdraw Consent</h4>
+                <p class="text-lg text-white mb-4">
+                    Where we rely on your consent to process your personal data (e.g., for non-essential cookies), you have the right to withdraw that consent at any time.
+                    <br><br>
+                    Withdrawing consent will not affect the lawfulness of any processing carried out before you withdraw your consent. It simply means we will no longer process your data based on that specific consent going forward.
+                    <br><br>
+                    In summary, you can withdraw your consent for data processing, including for non-essential cookies, at any time, without affecting past lawful processing.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.8. Right to Non-Discrimination (CCPA)</h4>
+                <p class="text-lg text-white mb-4">
+                    For California residents, the CCPA grants you the right not to be discriminated against for exercising any of your privacy rights. This means Snacktum will not deny you services, charge you different prices, or provide a different level or quality of services if you exercise your CCPA rights.
+                    <br><br>
+                    We are committed to treating all users fairly, regardless of their privacy choices.
+                    <br><br>
+                    In summary, California residents have the right to non-discrimination for exercising their CCPA privacy rights, ensuring fair treatment from Snacktum.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.9. How to Exercise Your Rights</h4>
+                <p class="text-lg text-white mb-4">
+                    To exercise any of the rights mentioned above, please contact us using the contact information provided at the end of this Cookie Policy. We may need to verify your identity before fulfilling your request to ensure the security of your personal data.
+                    <br><br>
+                    We will respond to your request within the timeframes required by applicable law (e.g., 30 days under GDPR, 45 days under CCPA).
+                    <br><br>
+                    In summary, you can exercise your privacy rights by contacting Snacktum, and we will verify your identity and respond within legal timeframes.
+                </p>
+
+                <h4 class="text-2xl text-electric-lime mb-3 fredoka">10.10. Lodging a Complaint</h4>
+                <p class="text-lg text-white mb-4">
+                    If you are an EEA or UK resident and believe that Snacktum has not complied with applicable data protection laws, you have the right to lodge a complaint with a supervisory authority.
+                    <br><br>
+                    We encourage you to contact us first so we can attempt to resolve your concerns directly, but this right remains available to you.
+                    <br><br>
+                    In summary, EEA/UK residents have the right to lodge a complaint with a supervisory authority if they believe Snacktum has violated data protection laws.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">11. Updates to This Cookie Policy</h3>
+                <p class="text-lg text-white mb-4">
+                    Snacktum has the discretion to update this Cookie Policy at any time. When we do, we will revise the "last updated" date at the bottom of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are using cookies.
+                    <br><br>
+                    You acknowledge and agree that it is your responsibility to review this Cookie Policy periodically and become aware of modifications. Significant changes will be communicated through prominent notices on our Site or via email, where appropriate, to ensure you are fully aware of how cookies are being utilized.
+                    <br><br>
+                    This ensures that our policy remains current and reflects any changes in our practices or in relevant legal regulations. We are committed to maintaining transparency regarding our cookie usage.
+                    <br><br>
+                    In summary, Snacktum may update this Cookie Policy periodically, with changes reflected by an updated date and significant changes communicated prominently, making it your responsibility to review for modifications.
+                </p>
+
+                <h3 class="text-3xl text-digital-cyan mb-4 fredoka">12. Contacting Us About Cookies</h3>
+                <p class="text-lg text-white mb-4">
+                    If you have any questions about this Cookie Policy, the practices of this site, or your dealings with this site regarding cookies, please contact us at:
+                </p>
+                <p class="text-lg text-white mb-4">
+                    <strong>Snacktum</strong><br>
+                    Email: <a href="mailto:cookies@snacktum.com" class="text-electric-lime hover:underline">cookies@snacktum.com</a><br>
+                    Address: 123 Munchie Lane, Snack City, Flavorland, FL 90210, USA
+                </p>
+                <p class="text-lg text-white">
+                    This document was last updated on July 9, 2025.
+                </p>
+            </div>
+        </section>
+
+        <!-- Customer Satisfaction -->
+        <section id="customer-satisfaction" class="container mx-auto px-4 py-16 bg-gradient-snacktum rounded-3xl mb-16 text-center">
+            <h2 class="text-5xl mb-8 text-white">Your Snack Happiness, Our Priority</h2>
+            <p class="text-xl text-white mb-6">At Snacktum, we are utterly devoted to your snacking satisfaction. We believe that every munch, every bite, and every craving should be met with unbridled joy and deliciousness. Our commitment extends beyond just providing recipes; it's about fostering a community where snack lovers feel understood, inspired, and always delighted. We meticulously curate our content, test our recipes, and strive to bring you the most creative and mouth-watering snack ideas that actually work. Your feedback is our fuel, helping us to continuously improve and innovate. If you ever have a suggestion, a question, or simply want to share your latest snack triumph, please don't hesitate to reach out. We're here to ensure your journey through the world of snacks is nothing short of epic. Because when you snack loud and snack proud, we know we've done our job right!</p>
+            <a href="contact.html" class="btn-primary">Contact Us</a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal-black text-white py-8 mt-16 rounded-t-3xl">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <h3 class="text-2xl text-electric-lime fredoka">Snacktum Headquarters</h3>
+                <p class="text-md text-gray-300">
+                    123 Munchie Lane, Snack City, <br>
+                    Flavorland, FL 90210, USA <br>
+                    Phone: +1 (555) 123-4567
+                </p>
+            </div>
+            <nav class="mb-4">
+                <ul class="flex justify-center space-x-6 text-sm">
+                    <li><a href="index.html" class="hover:text-electric-lime transition-colors duration-300">Home</a></li>
+                    <li><a href="blog.html" class="hover:text-electric-lime transition-colors duration-300">Blog</a></li>
+                    <li><a href="privacy.html" class="hover:text-electric-lime transition-colors duration-300">Privacy</a></li>
+                    <li><a href="terms.html" class="hover:text-electric-lime transition-colors duration-300">Terms</a></li>
+                    <li><a href="cookies.html" class="hover:text-electric-lime transition-colors duration-300">Cookies</a></li>
+                    <li><a href="contact.html" class="hover:text-electric-lime transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="text-sm text-gray-400">&copy; 2025 Snacktum. All rights reserved. Snack loud. Snack proud.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="hidden">
+        <p>This website uses cookies to ensure you get the best experience on our website. By clicking "Accept", you agree to our use of cookies as described in our <a href="cookies.html" class="text-digital-cyan hover:underline">Cookie Policy</a>.</p>
+        <div class="button-group">
+            <button class="btn btn-accept" onclick="acceptCookies()">Accept</button>
+            <button class="btn btn-decline" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Cookie Consent Banner
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsentBanner = document.getElementById('cookie-consent-banner');
+            const cookieAccepted = localStorage.getItem('snacktum_cookie_consent');
+
+            if (!cookieAccepted) {
+                cookieConsentBanner.classList.remove('hidden');
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem('snacktum_cookie_consent', 'accepted');
+            document.getElementById('cookie-consent-banner').classList.add('hidden');
+            // Here you would typically load analytics scripts or other cookie-dependent functionalities
+            console.log('Cookies accepted.');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('snacktum_cookie_consent', 'declined');
+            document.getElementById('cookie-consent-banner').classList.add('hidden');
+            // Here you would typically disable analytics scripts and other cookie-dependent functionalities
+            console.log('Cookies declined.');
+        }
+    </script>
+
+</body>
+</html>
